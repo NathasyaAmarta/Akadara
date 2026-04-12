@@ -8,15 +8,15 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-    <!-- AOS Animation -->
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <!-- AOS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
 
     <!-- CSS -->
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-    <!-- Navigation -->
+    <!-- Navbar -->
     <nav>
         <div class="nav-container">
             <div class="logo" data-aos="zoom-in" data-aos-duration="1500">
@@ -24,18 +24,10 @@
             </div>
 
             <div class="links">
-                <div class="link active" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="100">
-                    <a href="index.html">Home</a>
-                </div>
-                <div class="link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="200">
-                    <a href="about.html">About Us</a>
-                </div>
-                <div class="link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="300">
-                    <a href="skill.html">Members</a>
-                </div>
-                <div class="link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="500">
-                    <a href="contact.html">Contact</a>
-                </div>
+                <div class="link active"><a href="index.html">Home</a></div>
+                <div class="link"><a href="about.html">About Us</a></div>
+                <div class="link"><a href="skill.html">Members</a></div>
+                <div class="link"><a href="contact.html">Contact</a></div>
             </div>
         </div>
 
@@ -54,44 +46,40 @@
         </div>
     </nav>
 
-    <!-- Main Hero Section -->
+    <!-- Hero -->
     <section>
         <div class="main-container">
-            <!-- Left Text -->
             <div class="content">
-                <h1 data-aos="fade-left" data-aos-duration="1500" data-aos-delay="700">
+                <h1 data-aos="fade-left" data-aos-duration="1500">
                     Akadara
                 </h1>
 
-                <div class="typewriter" data-aos="fade-right" data-aos-duration="1500" data-aos-delay="900">
-                    Your news is a mail away, <span>stay tuned!</span><label>|</label>
+                <div class="typewriter" data-aos="fade-right" data-aos-duration="1500">
+                    Your news is a mail away, <span></span><label>|</label>
                 </div>
 
-                <p data-aos="flip-down" data-aos-duration="1500" data-aos-delay="1100">
-                    Welcome to Akadara, your trusted source for updates, stories, 
-                    and meaningful news delivered straight to your inbox.
+                <p data-aos="flip-down" data-aos-duration="1500">
+                    Welcome to Akadara, your trusted source for fresh stories, 
+                    updates, and news delivered with style.
                 </p>
 
-                <div class="btn" data-aos="zoom-out" data-aos-duration="1500" data-aos-delay="1800">
+                <div class="btn">
                     <a href="about.html">
                         <button>About Us</button>
                     </a>
                 </div>
             </div>
 
-            <!-- Right Image -->
-            <div class="image" data-aos="zoom-in" data-aos-duration="3000">
-                <img src="bg.jpg" alt="Akadara Banner">
+            <div class="image" data-aos="zoom-in" data-aos-duration="2000">
+                <img src="bg.jpg" alt="Akadara News">
             </div>
         </div>
     </section>
 
-    <!-- AOS Script -->
+    <!-- AOS JS -->
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
-        AOS.init({
-            offset: 0
-        });
+        AOS.init({ offset: 0 });
     </script>
 
     <!-- JS -->
