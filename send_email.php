@@ -22,8 +22,8 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
     exit;
 }
 
-// Email tujuan (ganti dengan email Anda)
-$to = "tamzidan01@gmail.com"; // Ganti dengan email Anda
+// Email tujuan 
+$to = "nathasya.amarta@gmail.com"
 
 // Persiapkan pesan email
 $email_content = "Nama: $name\n";
