@@ -5,36 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Akadara</title>
 
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
-    <!-- AOS -->
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
-
-    <!-- CSS -->
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-    <!-- Navbar -->
     <nav>
         <div class="nav-container">
-            <div class="logo" data-aos="zoom-in" data-aos-duration="1500">
+            <div class="logo" data-aos="zoom-in">
                 Akadara
             </div>
 
             <div class="links">
-                <div class="link active"><a href="index.html">Home</a></div>
-                <div class="link"><a href="about.html">About Us</a></div>
-                <div class="link"><a href="skill.html">Members</a></div>
-                <div class="link"><a href="contact.html">Contact</a></div>
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="skill.html">Members</a>
+                <a href="contact.html">Contact</a>
             </div>
         </div>
 
-        <!-- Hamburger -->
         <i class="fa-solid fa-bars hamburg" onclick="hamburg()"></i>
 
-        <!-- Dropdown -->
         <div class="dropdown">
             <div class="links">
                 <a href="index.html">Home</a>
@@ -46,21 +38,18 @@
         </div>
     </nav>
 
-    <!-- Hero -->
     <section>
         <div class="main-container">
             <div class="content">
-                <h1 data-aos="fade-left" data-aos-duration="1500">
-                    Akadara
-                </h1>
+                <h1 data-aos="fade-left">Akadara</h1>
 
-                <div class="typewriter" data-aos="fade-right" data-aos-duration="1500">
+                <div class="typewriter" data-aos="fade-right">
                     Your news is a mail away, <span></span><label>|</label>
                 </div>
 
-                <p data-aos="flip-down" data-aos-duration="1500">
-                    Welcome to Akadara, your trusted source for fresh stories, 
-                    updates, and news delivered with style.
+                <p data-aos="flip-down">
+                    Welcome to Akadara, your trusted source for fresh updates,
+                    stories, and breaking news delivered beautifully.
                 </p>
 
                 <div class="btn">
@@ -70,19 +59,16 @@
                 </div>
             </div>
 
-            <div class="image" data-aos="zoom-in" data-aos-duration="2000">
-                <img src="bg.jpg" alt="Akadara News">
+            <div class="image" data-aos="zoom-in">
+                <img src="bg.jpg" alt="Akadara">
             </div>
         </div>
     </section>
 
-    <!-- AOS JS -->
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
         AOS.init({ offset: 0 });
     </script>
-
-    <!-- JS -->
     <script src="script.js"></script>
 </body>
 </html>
