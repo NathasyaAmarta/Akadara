@@ -1,4 +1,4 @@
-/* Subscrbe YouTube Tamzidan Mahdiyin */
+
 
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap");
 
@@ -30,7 +30,7 @@ nav {
   align-items: center;
 }
 
-/* Subscrbe YouTube Tamzidan Mahdiyin */
+
 
 .logo {
   color: white;
@@ -122,7 +122,7 @@ section {
   min-height: 100px;
 }
 
-/* Subscrbe YouTube Tamzidan Mahdiyin */
+
 
 .content h1 {
   font-size: clamp(1rem, 1rem + 5vw, 1.8rem);
