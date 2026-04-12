@@ -143,10 +143,23 @@ section {
   border-radius: 50%;
   overflow: hidden;
   box-shadow: 0 0 30px rgb(211, 3, 3);
+  animation: floatLogo 3s ease-in-out infinite;
 }
 
 .image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+@keyframes floatLogo {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
