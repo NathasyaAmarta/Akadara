@@ -41,21 +41,21 @@
             <h2>Akadara - Choose Your PTN</h2>
             <p class="product-desc">Cari tahu 3 Perguruan Tinggi Negeri terbaik berdasarkan kategori dan jurusan impianmu.</p>
             
-            <div class="form-group">
-                <label for="kategori">Pilih Kategori Jurusan:</label>
-                <select id="kategori" onchange="updateJurusan()">
-                    <option value="">-- Pilih Kategori --</option>
-                    <option value="IPA">Saintek (IPA)</option>
-                    <option value="IPS">Soshum (IPS)</option>
-                </select>
-            </div>
+           <div class="form-group">
+    <label for="kategori">Pilih Kategori Jurusan:</label>
+    <select id="kategori" onchange="updateJurusan()">
+        <option value="">-- Pilih Kategori --</option>
+        <option value="IPA">Saintek (IPA)</option>
+        <option value="IPS">Soshum (IPS)</option>
+    </select>
+</div>
 
-            <div class="form-group">
-                <label for="jurusan" id="label-jurusan">Pilih Jurusan Spesifik:</label>
-                <select id="jurusan" disabled>
-                    <option value="">-- Pilih Kategori Dulu --</option>
-                </select>
-            </div>
+<div class="form-group">
+    <label for="jurusan">Pilih Jurusan Spesifik:</label>
+    <select id="jurusan" disabled>
+        <option value="">-- Pilih Kategori Dulu --</option>
+    </select>
+</div>
 
             <button class="btn-search" onclick="cekPTN()">Cari Top 3 PTN</button>
 
