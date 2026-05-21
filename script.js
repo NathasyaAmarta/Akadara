@@ -4,9 +4,9 @@
 const databasePTN = {
     IPA: {
         "Kedokteran": [
-            { nama: "UI": "logo ui.png" },
-            { nama: "UGM": "logo ugm.png" },
-            { nama: "UNAIR": "logo unair.png" }
+            { nama: "UI", logo: "logo ui.png" },
+            { nama: "UGM", logo: "logo ugm.png" },
+            { nama: "UNAIR", logo: "logo unair.png" }
         ],
         "Teknik Informatika": [
             { nama: "ITB", logo: "https://upload.wikimedia.org/wikipedia/commons/a/ae/Logo_Institut_Teknologi_Bandung.png" },
