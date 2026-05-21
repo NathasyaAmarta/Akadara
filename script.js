@@ -1,29 +1,29 @@
 // ==========================================
-// 1. DATA JURUSAN & TOP 3 PTN
+// 1. DATA JURUSAN & TOP 3 PTN (Jalur Lokal/Offline)
 // ==========================================
 const databasePTN = {
     IPA: {
         "Kedokteran": [
-            { nama: "UI", logo: "logo ui.png" },
-            { nama: "UGM", logo: "logo ugm.png" },
-            { nama: "UNAIR", logo: "logo unair.png" }
+            { nama: "UI", logo: "logo_ui.png" },
+            { nama: "UGM", logo: "logo_ugm.png" },
+            { nama: "UNAIR", logo: "logo_unair.png" }
         ],
         "Teknik Informatika": [
-            { nama: "ITB", logo: "https://upload.wikimedia.org/wikipedia/commons/a/ae/Logo_Institut_Teknologi_Bandung.png" },
-            { nama: "ITS", logo: "https://upload.wikimedia.org/wikipedia/commons/8/87/Logo_ITS_2016.png" },
-            { nama: "UI", logo: "https://upload.wikimedia.org/wikipedia/commons/0/0b/Logo_Universitas_Indonesia.png" }
+            { nama: "ITB", logo: "logo_itb.png" },
+            { nama: "ITS", logo: "logo_its.png" },
+            { nama: "UI", logo: "logo_ui.png" }
         ]
     },
     IPS: {
         "Hukum": [
-            { nama: "UI", logo: "https://upload.wikimedia.org/wikipedia/commons/0/0b/Logo_Universitas_Indonesia.png" },
-            { nama: "UGM", logo: "https://upload.wikimedia.org/wikipedia/commons/e/ec/Logo_UGM_95px.png" },
-            { nama: "UNDIP", logo: "https://upload.wikimedia.org/wikipedia/id/8/81/Logo_Universitas_Diponegoro.png" }
+            { nama: "UI", logo: "logo_ui.png" },
+            { nama: "UGM", logo: "logo_ugm.png" },
+            { nama: "UNDIP", logo: "logo_undip.png" }
         ],
         "Akuntansi": [
-            { nama: "UI", logo: "https://upload.wikimedia.org/wikipedia/commons/0/0b/Logo_Universitas_Indonesia.png" },
-            { nama: "UGM", logo: "https://upload.wikimedia.org/wikipedia/commons/e/ec/Logo_UGM_95px.png" },
-            { nama: "UNPAD", logo: "https://upload.wikimedia.org/wikipedia/commons/a/ad/Logo_Unpad.png" }
+            { nama: "UI", logo: "logo_ui.png" },
+            { nama: "UGM", logo: "logo_ugm.png" },
+            { nama: "UNPAD", logo: "logo_unpad.png" }
         ]
     }
 };
@@ -51,16 +51,17 @@ function updateJurusan() {
     const jurusanSelect = document.getElementById('jurusan');
     const kategoriTerpilih = kategoriSelect.value;
     
-    // Teks ini akan muncul di Inspect Console browser buat pembuktian
-    console.log("Kategori yang lo pilih adalah: " + kategoriTerpilih);
-    
+    // Reset dropdown jurusan tiap kali kategori berubah
     jurusanSelect.innerHTML = '<option value="">-- Pilih Jurusan --</option>';
     
     if (kategoriTerpilih && databasePTN[kategoriTerpilih]) {
-        // Baris ini yang bertugas membuka gembok dropdown jurusan
-        jurusanSelect.disabled = false; 
+        // Buka lock select jurusan
+        jurusanSelect.disabled = false;
         
+        // Ambil daftar nama jurusan berdasarkan kategori
         const daftarJurusan = Object.keys(databasePTN[kategoriTerpilih]);
+        
+        // Masukkan daftar jurusan ke dalam elemen select
         daftarJurusan.forEach(jurusan => {
             const opt = document.createElement('option');
             opt.value = jurusan;
@@ -68,6 +69,7 @@ function updateJurusan() {
             jurusanSelect.appendChild(opt);
         });
     } else {
+        // Jika kembali pilih opsi kosong, lock lagi dropdown jurusannya
         jurusanSelect.disabled = true;
         jurusanSelect.innerHTML = '<option value="">-- Pilih Kategori Dulu --</option>';
     }
