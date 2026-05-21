@@ -11,8 +11,11 @@ const databasePTN = {
         "Teknik Informatika": [
             { nama: "ITB", logo: "logo itb.png" },
             { nama: "ITS", logo: "logo its.png" },
-            { nama: "UI", logo: "logo ui.png" }
-        ]
+            { nama: "Universitas Padjajaran", logo: "logo unpad.png" }
+        ],
+        "Aktuaria": [
+            { nama: "Universitas Indonesia", logo: "logo ui.png" },
+            { nama: "Universitas Udayana", logo: "logo itb
     },
     IPS: {
         "Hukum": [
