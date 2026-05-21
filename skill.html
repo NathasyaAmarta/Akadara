@@ -3,18 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Akadara</title>
+    <title>Akadara - Choose Your PTN</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
     <nav>
         <div class="nav-container">
             <div class="logo" data-aos="zoom-in">
                 Akadara
             </div>
-
             <div class="links">
                 <a href="index.html">Home</a>
                 <a href="about.html">About Us</a>
@@ -36,30 +36,70 @@
         </div>
     </nav>
 
-  <div class="container">
-    <h2>Akadara - Choose Your PTN</h2>
-    
-    <label for="kategori">Pilih Kategori Jurusan:</label>
-    <select id="kategori" onchange="updateJurusan()">
-        <option value="">-- Pilih Kategori --</option>
-        <option value="IPA">IPA</option>
-        <option value="IPS">IPS</option>
-    </select>
+    <section class="hero-section">
+        <div class="main-container">
+            <div class="content">
+                <h1 data-aos="fade-left">Akadara</h1>
 
-    <label for="jurusan">Pilih Jurusan Spesifik:</label>
-    <select id="jurusan" disabled>
-        <option value="">-- Pilih Kategori Dulu --</option>
-    </select>
+                <div class="typewriter" data-aos="fade-right">
+                    Your news is a mail away, <span>stay tuned!</span>
+                </div>
 
-    <button onclick="cekPTN()">Cari Top 3 PTN</button>
+                <p data-aos="flip-down">
+                    Welcome to Akadara, your trusted source for fresh updates,
+                    stories, and breaking news delivered beautifully.
+                </p>
 
-    <div id="hasil">
-        <p><strong>Top 3 PTN dengan jurusan ini:</strong></p>
-        
-        <div id="container-logo"></div>
-    </div>
-</div>
+                <div class="btn">
+                    <a href="about.html">
+                        <button>About Us</button>
+                    </a>
+                </div>
+            </div>
 
-<script src="script.js"></script>
+            <div class="image" data-aos="zoom-in">
+                <img src="bg.jpg" alt="Akadara Mascot/Banner">
+            </div>
+        </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <section class="product-section" data-aos="fade-up">
+        <div class="container-product">
+            <h2>Akadara - Choose Your PTN</h2>
+            <p class="product-desc">Cari tahu 3 Perguruan Tinggi Negeri terbaik berdasarkan kategori dan jurusan impianmu.</p>
+            
+            <div class="form-group">
+                <label for="kategori">Pilih Kategori Jurusan:</label>
+                <select id="kategori" onchange="updateJurusan()">
+                    <option value="">-- Pilih Kategori --</option>
+                    <option value="IPA">Saintek (IPA)</option>
+                    <option value="IPS">Soshum (IPS)</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="jurusan">Pilih Jurusan Spesifik:</label>
+                <select id="jurusan" disabled>
+                    <option value="">-- Pilih Kategori Dulu --</option>
+                </select>
+            </div>
+
+            <button class="btn-search" onclick="cekPTN()">Cari Top 3 PTN</button>
+
+            <div id="hasil" style="display: none;">
+                <p><strong>Top 3 PTN dengan jurusan <span id="nama-jurusan-terpilih"></span>:</strong></p>
+                <div id="container-logo"></div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        // Inisialisasi efek animasi scroll
+        AOS.init({ offset: 0 });
+    </script>
+    <script src="script.js"></script>
 </body>
 </html>
