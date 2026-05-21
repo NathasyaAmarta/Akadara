@@ -5,7 +5,7 @@ const databasePTN = {
     IPA: {
         "Kedokteran": [
             { nama: "UI": "img/logo ui.png" },
-            { nama: "UGM": "img/logo ugm.png },
+            { nama: "UGM": "img/logo ugm.png" },
             { nama: "UNAIR": "img/logo unair.png" }
         ],
         "Teknik Informatika": [
