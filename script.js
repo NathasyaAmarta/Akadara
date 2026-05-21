@@ -4,14 +4,14 @@
 const databasePTN = {
     IPA: {
         "Kedokteran": [
-            { nama: "UI", logo: "logo_ui.png" },
-            { nama: "UGM", logo: "logo_ugm.png" },
-            { nama: "UNAIR", logo: "logo_unair.png" }
+            { nama: "UI", logo: "logo ui.png" },
+            { nama: "UGM", logo: "logo ugm.png" },
+            { nama: "UNAIR", logo: "logo unair.png" }
         ],
         "Teknik Informatika": [
-            { nama: "ITB", logo: "logo_itb.png" },
-            { nama: "ITS", logo: "logo_its.png" },
-            { nama: "UI", logo: "logo_ui.png" }
+            { nama: "ITB", logo: "logo itb.png" },
+            { nama: "ITS", logo: "logo its.png" },
+            { nama: "UI", logo: "logo ui.png" }
         ]
     },
     IPS: {
