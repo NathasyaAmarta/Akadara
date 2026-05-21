@@ -15,7 +15,19 @@ const databasePTN = {
         ],
         "Aktuaria": [
             { nama: "Universitas Indonesia", logo: "logo ui.png" },
-            { nama: "Universitas Udayana", logo: "logo itb
+            { nama: "Universitas Udayana", logo: "logo udayana.png"},
+            { nama: "Universitas Airlangga", logo: "logo unair.png"}
+        ],
+        "Farmasi": [
+            { nama: "Universitas Gadjah Mada", logo: "logo ugm.png" },
+            { nama: "Universitas Airlangga", logo: "logo unair.png" },
+            { nama: "Universitas Indonesia", logo: "logo ui.png" }
+        ],
+        "Teknik Industri": [
+            { nama: "Institut Teknologi Bandung", logo: "logo itb.png" },
+            { nama: "Institut Teknologi Sepuluh Nopember", logo: "logo its.png" },
+            { nama: "Universitas Sebelas Maret", logo: "logo uns.png" }
+    
     },
     IPS: {
         "Hukum": [
