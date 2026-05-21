@@ -51,17 +51,16 @@ function updateJurusan() {
     const jurusanSelect = document.getElementById('jurusan');
     const kategoriTerpilih = kategoriSelect.value;
     
-    // Reset dropdown jurusan tiap kali kategori berubah
+    // Teks ini akan muncul di Inspect Console browser buat pembuktian
+    console.log("Kategori yang lo pilih adalah: " + kategoriTerpilih);
+    
     jurusanSelect.innerHTML = '<option value="">-- Pilih Jurusan --</option>';
     
     if (kategoriTerpilih && databasePTN[kategoriTerpilih]) {
-        // Buka lock select jurusan
-        jurusanSelect.disabled = false;
+        // Baris ini yang bertugas membuka gembok dropdown jurusan
+        jurusanSelect.disabled = false; 
         
-        // Ambil daftar nama jurusan berdasarkan kategori
         const daftarJurusan = Object.keys(databasePTN[kategoriTerpilih]);
-        
-        // Masukkan daftar jurusan ke dalam elemen select
         daftarJurusan.forEach(jurusan => {
             const opt = document.createElement('option');
             opt.value = jurusan;
@@ -69,7 +68,6 @@ function updateJurusan() {
             jurusanSelect.appendChild(opt);
         });
     } else {
-        // Jika kembali pilih opsi kosong, lock lagi dropdown jurusannya
         jurusanSelect.disabled = true;
         jurusanSelect.innerHTML = '<option value="">-- Pilih Kategori Dulu --</option>';
     }
