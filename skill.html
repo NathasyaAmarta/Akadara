@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akadara</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <div class="logo" data-aos="zoom-in">
+                Akadara
+            </div>
+
+            <div class="links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="skill.html">Members</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </div>
+
+        <i class="fa-solid fa-bars hamburg" onclick="hamburg()"></i>
+
+        <div class="dropdown">
+            <div class="links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="skill.html">Members</a>
+                <a href="contact.html">Contact</a>
+                <i class="fa-solid fa-xmark cancel" onclick="cancel()"></i>
+            </div>
+        </div>
+    </nav>
+
+  <div class="container">
+    <h2>Akadara - Choose Your PTN</h2>
+    
+    <label for="kategori">Pilih Kategori Jurusan:</label>
+    <select id="kategori" onchange="updateJurusan()">
+        <option value="">-- Pilih Kategori --</option>
+        <option value="IPA">IPA</option>
+        <option value="IPS">IPS</option>
+    </select>
+
+    <label for="jurusan">Pilih Jurusan Spesifik:</label>
+    <select id="jurusan" disabled>
+        <option value="">-- Pilih Kategori Dulu --</option>
+    </select>
+
+    <button onclick="cekPTN()">Cari Top 3 PTN</button>
+
+    <div id="hasil">
+        <p><strong>Top 3 PTN dengan jurusan ini:</strong></p>
+        
+        <div id="container-logo"></div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
