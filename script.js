@@ -4,13 +4,13 @@
 const databasePTN = {
     IPA: {
         "Kedokteran": [
-            { nama: "UI", logo: "logo ui.png" },
-            { nama: "UGM", logo: "logo ugm.png" },
-            { nama: "UNAIR", logo: "logo unair.png" }
+            { nama: "Universitas Indonesia", logo: "logo ui.png" },
+            { nama: "Universitas Airlangga", logo: "logo unair.png" },
+            { nama: "Universitas Gadjah Mada", logo: "logo ugm.png" }
         ],
         "Teknik Informatika": [
-            { nama: "ITB", logo: "logo itb.png" },
-            { nama: "ITS", logo: "logo its.png" },
+            { nama: "Institut Teknologi Bandung", logo: "logo itb.png" },
+            { nama: "Institut Teknologi Sepuluh Nopember", logo: "logo its.png" },
             { nama: "Universitas Padjajaran", logo: "logo unpad.png" }
         ],
         "Aktuaria": [
@@ -27,19 +27,36 @@ const databasePTN = {
             { nama: "Institut Teknologi Bandung", logo: "logo itb.png" },
             { nama: "Institut Teknologi Sepuluh Nopember", logo: "logo its.png" },
             { nama: "Universitas Sebelas Maret", logo: "logo uns.png" }
+        ]
     
     },
     IPS: {
         "Hukum": [
-            { nama: "UI", logo: "logo_ui.png" },
-            { nama: "UGM", logo: "logo_ugm.png" },
-            { nama: "UNDIP", logo: "logo_undip.png" }
+            { nama: "Universitas Indonesia", logo: "logo ui.png" },
+            { nama: "Universitas Gadjah Mada", logo: "logo ugm.png" },
+            { nama: "Universitas Sebelas Maret", logo: "logo uns.png" }
+        ],
+        "Hubungan Internasional": [
+            { nama: "Universitas Padjadjaran", logo: "logo unpad.png" },
+            { nama: "Universitas Indonesia", logo: "logo ui.png" },
+            { nama: "Universitas Airlangga", logo: "logo unair.png" }
+        ],
+        "Psikologi": [
+            { nama: "Universitas Indonesia", logo: "logo ui.png" },
+            { nama: "Universitas Pendidikan Indonesia", logo: "logo upi.png" },
+            { nama: "Universitas Negeri Malang", logo: "logo unm.png" }
+        ],
+        "Ilmu Komunikasi": [
+            { nama: "Universitas Indonesia", logo: "logo ui.png" },
+            { nama: "Universitas Gadjah Mada", logo: "logo ugm.png" },
+            { nama: "Universitas Unair", logo: "logo unair.png"}
         ],
         "Akuntansi": [
-            { nama: "UI", logo: "logo_ui.png" },
-            { nama: "UGM", logo: "logo_ugm.png" },
-            { nama: "UNPAD", logo: "logo_unpad.png" }
+            { nama: "Universitas Indonesia", logo: "logo ui.png" },
+            { nama: "Universitas Unair", logo: "logo unair.png"},
+            { nama: "Universitas Gadjah Mada", logo: "logo ugm.png" }
         ]
+            
     }
 };
 
