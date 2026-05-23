@@ -4,7 +4,7 @@
 const databasePTN = {
     IPA: {
         "Kedokteran": [
-            { nama: "Universitas Indonesia", logo: "logo ui.png" },
+            { nama: "Universitas Indonesia", logo: "logo_ui-removebg-preview.png" },
             { nama: "Universitas Airlangga", logo: "logo unair.png" },
             { nama: "Universitas Gadjah Mada", logo: "logo ugm.png" }
         ],
