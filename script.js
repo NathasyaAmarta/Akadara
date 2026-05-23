@@ -133,7 +133,7 @@ function cekPTN() {
         item.className = 'item-ptn';
         
         // Memberikan jeda waktu muncul animasi (staggered delay) antar kampus
-        item.style.animationDelay = `${index * 0.15}s`; 
+        item.style.animationDelay = `${index * 0.08}s`; 
 
         item.innerHTML = `
             <img src="${ptn.logo}" alt="Logo ${ptn.nama}" class="logo-campus">
