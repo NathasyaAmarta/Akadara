@@ -351,7 +351,11 @@ section {
    PERBAIKAN ANIMASI LOGO (BIAR SUPER SMOOTH)
    ========================================== */
 
-/* Kotak Tiap Kampus */
+/* =========================================================
+   GABUNGAN TOTAL: ANIMASI MUNCUL SMOOTH + HOVER GLOW FIX
+   ========================================================= */
+
+/* 1. Kotak Pembungkus Tiap Kampus (Mengatur Animasi Muncul) */
 .item-ptn {
   width: 30%; 
   display: flex;
@@ -359,13 +363,34 @@ section {
   align-items: center;
   text-align: center;
   opacity: 0; 
-  transform: translateY(25px); /* Kita naikin dikit biar efek "pop up"-nya lebih kerasa */
+  transform: translateY(25px); /* Titik awal animasi agak ke bawah */
   
-  /* GANTI BARIS INI: pakai cubic-bezier buat transisi kecepatan yang halus banget */
+  /* Animasi muncul super smooth pake cubic-bezier */
   animation: munculSatuSatu 0.6s cubic-bezier(0.25, 1, 0.5, 1) forwards; 
 }
 
-/* Animasi Muncul Bergantian */
+/* 2. Gambar Logo Kampus (Mengatur Ukuran & Efek Normal) */
+.logo-campus {
+  width: 90px;          /* Ukuran logo yang udah di-gedein */
+  height: 90px;         
+  object-fit: contain;  
+  filter: drop-shadow(0px 2px 6px rgba(255, 255, 255, 0.2)); 
+  margin-bottom: 8px; 
+  
+  /* Transisi pas mouse masuk/keluar biar gak kaku */
+  transition: transform 0.2s ease, filter 0.2s ease; 
+  
+  /* TRIK UTAMA: Biar sensor mouse nembus langsung ke hover induknya */
+  pointer-events: none; 
+}
+
+/* 3. Efek Pas Mouse Menempel (Hover) */
+.item-ptn:hover .logo-campus {
+  transform: scale(1.1); /* Efek nge-zoom 10% */
+  filter: drop-shadow(0px 4px 12px rgba(255, 255, 255, 0.8)); /* Efek glow putih terang */
+}
+
+/* 4. Rumus Animasi Muncul Bergantian */
 @keyframes munculSatuSatu {
   0% {
     opacity: 0;
@@ -373,6 +398,6 @@ section {
   }
   100% {
     opacity: 1;
-    transform: translateY(0); 
+    transform: translateY(0); /* Berakhir di posisi asli */
   }
 }
