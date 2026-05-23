@@ -37,8 +37,8 @@ const databasePTN = {
             { nama: "Universitas Sebelas Maret", logo: "logo uns.png" }
         ],
         "Hubungan Internasional": [
-            { nama: "Universitas Padjadjaran", logo: "logo unpad.png" },
             { nama: "Universitas Indonesia", logo: "logo ui.png" },
+            { nama: "Universitas Padjadjaran", logo: "logo unpad.png" },
             { nama: "Universitas Airlangga", logo: "logo unair.png" }
         ],
         "Psikologi": [
@@ -51,7 +51,7 @@ const databasePTN = {
             { nama: "Universitas Gadjah Mada", logo: "logo ugm.png" },
             { nama: "Universitas Unair", logo: "logo unair.png"}
         ],
-        "Akuntansi": [
+        "Ekonomi": [
             { nama: "Universitas Indonesia", logo: "logo ui.png" },
             { nama: "Universitas Unair", logo: "logo unair.png"},
             { nama: "Universitas Gadjah Mada", logo: "logo ugm.png" }
