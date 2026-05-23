@@ -347,15 +347,11 @@ section {
   line-height: 1.3;
 }
 
-/* ==========================================
-   PERBAIKAN ANIMASI LOGO (BIAR SUPER SMOOTH)
-   ========================================== */
-
 /* =========================================================
-   GABUNGAN TOTAL: ANIMASI MUNCUL SMOOTH + HOVER GLOW FIX
+   PERBAIKAN TERAKHIR: ANGKAT LAPISAN ELEMEN (Z-INDEX FIX)
    ========================================================= */
 
-/* 1. Kotak Pembungkus Tiap Kampus (Mengatur Animasi Muncul) */
+/* 1. Kotak Pembungkus Tiap Kampus */
 .item-ptn {
   width: 30%; 
   display: flex;
@@ -363,31 +359,36 @@ section {
   align-items: center;
   text-align: center;
   opacity: 0; 
-  transform: translateY(25px); /* Titik awal animasi agak ke bawah */
+  transform: translateY(25px); 
   
-  /* Animasi muncul super smooth pake cubic-bezier */
+  /* Tambahan Baru: Angkat posisi elemen biar gak kehalang box lain */
+  position: relative;
+  z-index: 10; 
+  
+  /* Animasi muncul tetap smooth */
   animation: munculSatuSatu 0.6s cubic-bezier(0.25, 1, 0.5, 1) forwards; 
 }
 
-/* 2. Gambar Logo Kampus (Mengatur Ukuran & Efek Normal) */
+/* 2. Gambar Logo Kampus */
 .logo-campus {
-  width: 90px;          /* Ukuran logo yang udah di-gedein */
+  width: 90px;          
   height: 90px;         
   object-fit: contain;  
   filter: drop-shadow(0px 2px 6px rgba(255, 255, 255, 0.2)); 
   margin-bottom: 8px; 
   
-  /* Transisi pas mouse masuk/keluar biar gak kaku */
+  /* Transisi wajib ada di sini agar efek hover-nya smooth */
   transition: transform 0.2s ease, filter 0.2s ease; 
   
-  /* TRIK UTAMA: Biar sensor mouse nembus langsung ke hover induknya */
+  /* Supaya sensor mouse fokus ke kotak luar */
   pointer-events: none; 
 }
 
-/* 3. Efek Pas Mouse Menempel (Hover) */
-.item-ptn:hover .logo-campus {
-  transform: scale(1.1); /* Efek nge-zoom 10% */
-  filter: drop-shadow(0px 4px 12px rgba(255, 255, 255, 0.8)); /* Efek glow putih terang */
+/* 3. Efek Pas Mouse Menempel (Hover) - SEKARANG DIPICU DARI DUA SISI */
+.item-ptn:hover .logo-campus,
+.logo-campus:hover {
+  transform: scale(1.1) !important; /* !important buat maksa browser mengutamakan hover ini */
+  filter: drop-shadow(0px 4px 12px rgba(255, 255, 255, 0.8)) !important; 
 }
 
 /* 4. Rumus Animasi Muncul Bergantian */
@@ -398,6 +399,6 @@ section {
   }
   100% {
     opacity: 1;
-    transform: translateY(0); /* Berakhir di posisi asli */
+    transform: translateY(0); 
   }
 }
