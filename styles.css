@@ -206,9 +206,13 @@ section {
 
 .container-product h2 { 
   text-align: center; 
-  color: #cc0000; /* Merah menyala */
+  color: #ffffff; /* <--- Sudah diganti jadi putih bersih */
   font-size: 1.8rem;
-  filter: drop-shadow(0px 2px 8px rgba(243, 74, 74, 0.6));
+  
+  /* Efek text-shadow (glow putih transparan + bayangan gelap agar tulisan tegas) */
+  text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.7), 
+               0px 0px 10px rgba(255, 255, 255, 0.4);
+               
   margin-bottom: 5px; 
   text-transform: uppercase;
   letter-spacing: 1px;
