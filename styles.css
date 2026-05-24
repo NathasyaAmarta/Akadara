@@ -214,11 +214,19 @@ section {
   letter-spacing: 1px !important;
 }
 
+/* Targetkan kelasnya langsung dengan proteksi penuh */
 .product-desc {
   text-align: center !important;
   font-size: 0.9rem !important;
-  color: #bbbbbb !important; /* Paksa balik ke abu-abu terang agar gak jadi hitam */
+  color: #bbbbbb !important; /* Warna abu-abu terang */
   margin-bottom: 25px !important;
+}
+
+/* JAGA-JAGA: Jika di HTML lo tulisan itu dibungkus tag p atau span di dalamnya */
+.product-desc p, 
+.product-desc span,
+.container-product p {
+  color: #bbbbbb !important; /* Paksa semua teks di area deskripsi jadi abu-abu */
 }
 
 /* Layout Form Input */
