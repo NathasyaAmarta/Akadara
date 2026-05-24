@@ -205,24 +205,17 @@ section {
 }
 
 .container-product h2 { 
-  text-align: center; 
-  color: #ffffff; /* <--- Sudah diganti jadi putih bersih */
-  font-size: 1.8rem;
+  text-align: center !important; 
+  color: #ffffff !important; /* <--- !important bakal maksa warnanya ganti jadi putih, gak bisa didebat sama CSS lain */
+  font-size: 1.8rem !important;
   
-  /* Efek text-shadow (glow putih transparan + bayangan gelap agar tulisan tegas) */
+  /* Efek text-shadow glow putih transparan */
   text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.7), 
-               0px 0px 10px rgba(255, 255, 255, 0.4);
+               0px 0px 10px rgba(255, 255, 255, 0.4) !important;
                
-  margin-bottom: 5px; 
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-.product-desc {
-  text-align: center;
-  font-size: 0.9rem;
-  color: #bbbbbb;
-  margin-bottom: 25px;
+  margin-bottom: 5px !important; 
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
 }
 
 /* Layout Form Input */
