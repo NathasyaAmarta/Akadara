@@ -13,6 +13,11 @@ const databasePTN = {
             { nama: "Institut Teknologi Sepuluh Nopember", logo: "logo its remove.png" },
             { nama: "Universitas Padjajaran", logo: "logo unpad remove.png" }
         ],
+        "Arsitektur": [
+            { nama: "Institut Teknologi Bandung", logo: "logo itb remove.png" },
+            { nama: "Universitas Indonesia", logo: "logo ui remove.png" },
+            { nama: "Institut Teknologi Sepuluh Nopember", logo: "logo its remove.png" }
+        ],
         "Aktuaria": [
             { nama: "Universitas Indonesia", logo: "logo ui remove.png" },
             { nama: "Universitas Udayana", logo: "logo udayana remove.png"},
@@ -23,6 +28,15 @@ const databasePTN = {
             { nama: "Universitas Airlangga", logo: "logo unair remove.png" },
             { nama: "Universitas Indonesia", logo: "logo ui remove.png" }
         ],
+        "Ilmu Gizi": [
+            { nama: "Universitas Diponegoro", logo: "logo undip remove.png" },
+            { nama: "Institut Pertanian Bogor", logo: "logo ipb remove.png" },
+            { nama: "Universitas Brawijaya", logo: "logo ub remove.png"
+        ],
+        "Matematika": [
+            { nama: "Universitas Pendidikan Indonesia", logo: "logo upi remove.png" },
+            { nama: "Universitas Negeri Malang", logo: "logo unm.png" },
+            { nama: "Universitas Negeri Yogyakarta", logo: "logo uny
         "Teknik Industri": [
             { nama: "Institut Teknologi Bandung", logo: "logo itb remove.png" },
             { nama: "Institut Teknologi Sepuluh Nopember", logo: "logo its remove.png" },
