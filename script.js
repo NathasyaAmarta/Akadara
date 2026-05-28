@@ -43,7 +43,6 @@ const databasePTN = {
             { nama: "Institut Teknologi Sepuluh Nopember", logo: "logo its remove.png" },
             { nama: "Universitas Sebelas Maret", logo: "logo uns remove.png" }
         ]
-    
     },
     IPS: {
         "Hukum": [
