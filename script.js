@@ -36,7 +36,7 @@ const databasePTN = {
         "Matematika": [
             { nama: "Universitas Pendidikan Indonesia", logo: "logo upi remove.png" },
             { nama: "Universitas Negeri Malang", logo: "logo unm remove.png" },
-            { nama: "Universitas Negeri Yogyakarta", logo: "logo uny remove.webp" }
+            { nama: "Universitas Negeri Yogyakarta", logo: "logo uny remove.png" }
         ],
         "Teknik Industri": [
             { nama: "Institut Teknologi Bandung", logo: "logo itb remove.png" },
