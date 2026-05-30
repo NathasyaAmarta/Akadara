@@ -356,33 +356,46 @@ section {
 }
 
 /* ==========================================
-   MENGATUR UKURAN LOGO BIAR LEBIH GEDE
+   PERBAIKAN LOGO: PADAT, GEDE, & RAPAT
    ========================================== */
 
-/* 1. Kotak pembungkus kita lebarin biar logo gedenya ga sumpek */
+/* 1. Kotak pembungkusnya kita bikin pas (tidak terlalu tinggi) */
 .container-product .item-ptn {
-  width: 280px !important;        
-  padding: 25px !important;       
-  margin: 15px !important;        
+  width: 200px !important;       /* Lebar kotak kita buat pas */
+  padding: 15px !important;       /* Kurangi padding biar rapat */
+  margin: 10px !important;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-/* 2. Logonya kita bikin beneran jumbo */
+/* 2. Logonya kita paksa nge-zoom maksimal di dalam kotaknya */
 .container-product .item-ptn img.logo-campus {
-  width: 200px !important;        
-  height: 200px !important;       
-  max-width: 100% !important;     
+  width: 140px !important;        /* Ukuran width optimal */
+  height: 140px !important;       /* Ukuran height optimal */
+  max-width: 100% !important;
   object-fit: contain !important; 
-  margin-bottom: 20px !important; 
-  transition: transform 0.3s ease !important; 
+  transform: scale(1.4) !important; /* <--- TRIK UTAMA: Kita zoom paksa logonya dari dalam biar area transparannya hilang! */
+  margin-bottom: 30px !important; /* Kasih jarak aman karena efek zoom tadi */
+  transition: transform 0.3s ease !important;
 }
 
-/* 3. Efek pas logo dideketin mouse (hover) biar makin interaktif */
+/* 3. Efek hover pas dideketin mouse biar tambah gede dikit */
 .container-product .item-ptn:hover img.logo-campus {
-  transform: scale(1.1) !important; /* Tetap nge-zoom halus 10% pas di-hover */
+  transform: scale(1.5) !important; /* Pas di-hover bakal makin maju dikit */
 }
 
-/* 4. Rumus Animasi Muncul Bergantian */
+/* 4. Nama kampus di bawahnya kita naikin biar gak amblas ke bawah */
+.container-product .item-ptn .nama-ptn-bawah {
+  font-size: 1rem !important;
+  font-weight: 600 !important;
+  margin-top: 5px !important;
+  line-height: 1.3 !important;
+} 
+
+/* 5. Rumus Animasi Muncul Bergantian */
 @keyframes munculSatuSatu {
   0% {
     opacity: 0;
