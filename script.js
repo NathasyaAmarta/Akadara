@@ -42,6 +42,16 @@ const databasePTN = {
             { nama: "Institut Teknologi Bandung", logo: "logo itb remove.png" },
             { nama: "Institut Teknologi Sepuluh Nopember", logo: "logo its remove.png" },
             { nama: "Universitas Sebelas Maret", logo: "logo uns remove.png" }
+        ],
+        "Teknik Sipil": [
+            { nama: "Institut Teknologi Bandung", logo: "logo itb remove.png" },
+            { nama: "Universitas Gadjah Mada", logo: "logo ugm remove.png" },
+            { nama: "Institut Pertanian Bogor", logo: "logo ipb remove.png" }
+        ],
+        "Peternakan": [
+            { nama: "Universitas Diponegoro", logo: "logo undip remove.png" },
+            { nama: "Institut Pertanian Bogor", logo: "logo ipb remove.png" },
+            { nama: "Universitas Brawijaya", logo: "logo ub remove.png" }
         ]
     },
     IPS: {
@@ -65,12 +75,30 @@ const databasePTN = {
             { nama: "Universitas Gadjah Mada", logo: "logo ugm remove.png" },
             { nama: "Universitas Unair", logo: "logo unair remove.png"}
         ],
-        "Akuntasi": [
+        "Akuntansi": [ // <-- Udah dibenerin tulisannya biar ga typo baku
             { nama: "Universitas Udayana", logo: "logo udayana remove.png"},
             { nama: "Universitas Indonesia", logo: "logo ui remove.png" },
             { nama: "Universitas Trisakti", logo: "logo trisakti remove.png" }
-        ]
-            
+        ],
+        "Ilmu ekonomi": [
+            { nama: "Universitas Indonesia", logo: "logo ui remove.png" },
+            { nama: "Universitas Unair", logo: "logo unair remove.png"},
+            { nama: "Universitas Gadjah Mada", logo: "logo ugm remove.png" }
+        ],
+        "Kriminologi": [
+            { nama: "Universitas Diponegoro", logo: "logo undip remove.png" },
+            { nama: "Universitas Indonesia", logo: "logo ui remove.png" },
+            { nama: "Universitas Semarang", logo: "logo usm remove.png" }
+        ],
+        "Manajemen": [
+            { nama: "Universitas Indonesia", logo: "logo ui remove.png" },
+            { nama: "Universitas Udayana", logo: "logo udayana remove.png"},
+            { nama: "Institut Teknologi Bandung", logo: "logo itb remove.png" }
+        ],
+        "DKV": [
+            { nama: "Institut Teknologi Bandung", logo: "logo itb remove.png" },
+            { nama: "Institut Teknologi Sepuluh Nopember", logo: "logo its remove.png" },
+            { nama: "Universitas Negeri Semarang", logo: "logo unnes remove.png" }
     }
 };
 
