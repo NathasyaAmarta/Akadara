@@ -356,46 +356,30 @@ section {
 }
 
 /* ==========================================
-   KODE BALIK KE AWAL (SETELAN PABRIK)
+   KODE FIX BALIK KE SETELAN AWAL 
    ========================================== */
 
-/* 1. Kotak pembungkus tiap logo dan nama kampus */
-.container-product .item-ptn {
-  width: 180px !important;        /* Balik ke ukuran standar */
-  padding: 20px !important;       
-  margin: 10px !important;
+.item-ptn {
+  width: 180px !important;        
+  padding: 20px !important;        
   text-align: center !important;
-  display: block !important;       /* Balik ke display bawaan */
-  
-  /* Jalankan kembali animasi muncul satu-satu untuk kotaknya */
-  animation: munculSatuSatu 0.4s ease forwards;
+  display: block !important;
+  animation: munculSatuSatu 0.4s ease forwards !important; /* Animasi kotak tetap aktif */
 }
 
-/* 2. Gambar logonya langsung */
-.container-product .item-ptn img.logo-campus {
-  width: 120px !important;        /* Balik ke ukuran semula */
+.logo-campus {
+  width: 120px !important;        
   height: 120px !important;       
-  max-width: 100% !important;
   object-fit: contain !important;
-  transform: none !important;     /* Hapus efek zoom paksa */
   margin-bottom: 15px !important; 
   transition: transform 0.3s ease !important;
 }
 
-/* 3. Efek pas logo dideketin mouse (hover) */
-.container-product .item-ptn:hover img.logo-campus {
-  transform: scale(1.1) !important; /* Efek zoom tipis 10% pas di-hover */
+.item-ptn:hover .logo-campus {
+  transform: scale(1.1) !important; /* Balik ke efek zoom tipis pas di-hover */
 }
 
-/* 4. Nama kampus di bawah logo */
-.container-product .item-ptn .nama-ptn-bawah {
-  font-size: 0.95rem !important;  /* Ukuran font normal awal */
-  font-weight: normal !important;
-  margin-top: 0px !important;
-  line-height: normal !important;
-}
-
-/* 5. Rumus Animasi Muncul Bergantian */
+/* Pastikan rumus animasinya juga seperti ini di bawahnya */
 @keyframes munculSatuSatu {
   0% {
     opacity: 0;
