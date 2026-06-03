@@ -65,6 +65,11 @@ const databasePTN = {
             { nama: "Universitas Indonesia", logo: "logo ui remove.png" },
             { nama: "Universitas Airlangga", logo: "logo unair remove.png" }
         ],
+        "Ilmu Politik": [
+            { nama: "Universitas Indonesia", logo: "logo ui remove.png" },
+            { nama: "Universitas Diponegoro", logo: "logo undip remove.png" },
+            { nama: "Universitas Padjajaran", logo: "logo unpad remove.png" }
+        ],
         "Psikologi": [
             { nama: "Universitas Indonesia", logo: "logo ui remove.png" },
             { nama: "Universitas Pendidikan Indonesia", logo: "logo upi remove.png" },
