@@ -7,6 +7,58 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
     <link rel="stylesheet" href="styles.css">
+
+    <style>
+        .nav-dropdown-wrapper {
+            position: relative;
+            display: inline-block;
+        }
+        .nav-dropdown-wrapper .dropbtn {
+            cursor: pointer;
+        }
+        .nav-dropdown-wrapper .dropbtn i {
+            margin-left: 5px;
+            font-size: 0.8rem;
+            transition: transform 0.3s;
+        }
+        .nav-dropdown-wrapper:hover .dropbtn i {
+            transform: rotate(180deg);
+        }
+        .nav-dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: rgba(18, 18, 18, 0.95);
+            backdrop-filter: blur(10px);
+            min-width: 190px;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            margin-top: 10px;
+            z-index: 2000;
+            border-radius: 6px;
+            border: 1px solid rgba(211, 3, 3, 0.4);
+            box-shadow: 0px 8px 24px rgba(211, 3, 3, 0.3);
+            overflow: hidden;
+        }
+        .nav-dropdown-content a {
+            color: white !important;
+            padding: 12px 18px !important;
+            text-decoration: none !important;
+            display: flex !important;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.95rem !important;
+            border-bottom: none !important;
+            transition: background 0.3s, color 0.3s !important;
+        }
+        .nav-dropdown-content a:hover {
+            background-color: rgb(171, 0, 0) !important;
+            color: white !important;
+        }
+        .nav-dropdown-wrapper:hover .nav-dropdown-content {
+            display: block;
+        }
+    </style>
 </head>
 <body>
     <nav>
@@ -37,35 +89,30 @@
                 <a href="index.html">Home</a>
                 <a href="about.html">About Us</a>
                 <a href="contact.html">Design Product</a> 
-                
                 <a href="skill.html">Product (Skill)</a>
                 <a href="ptn-app.html">Product (Info PTN)</a>
-                
                 <i class="fa-solid fa-xmark cancel" onclick="cancel()"></i> 
             </div>
         </div>
     </nav>
+
     <section>
         <div class="main-container">
             <div class="content">
                 <h1 data-aos="fade-left">Akadara</h1>
-
                 <div class="typewriter" data-aos="fade-right">
                     Your news is a mail away, <span>stay tuned!</span>
                 </div>
-
                 <p data-aos="flip-down">
                     Welcome to Akadara, your trusted source for fresh updates,
                     stories, and breaking news delivered beautifully.
                 </p>
-
                 <div class="btn">
                     <a href="about.html">
                         <button>About Us</button>
                     </a>
                 </div>
             </div>
-
             <div class="image" data-aos="zoom-in">
                 <img src="bg.jpg" alt="Akadara">
             </div>
