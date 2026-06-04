@@ -1,4 +1,7 @@
-     <!DOCTYPE html>
+  Berikut adalah kode lengkap untuk `about.html`. Strukturnya diubah menjadi sistem kolom (menggunakan Flexbox) agar tulisan berada tepat di sebelah PPT Canva tanpa mengubah gaya navigasi, font, maupun warna dasar dari file `styles.css` milikmu.
+
+```html
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -60,8 +63,18 @@
             background-color: #f1f1f1;
         }
 
-        /* Pembungkus Khusus Konten Canva Anda */
-        .canva-wrapper {
+        /* Tata Letak Berdampingan (Flexbox) */
+        .about-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+            width: 100%;
+        }
+
+        /* Kolom Kiri: Canva */
+        .canva-side {
+            flex: 1.2; /* Sedikit lebih lebar untuk PPT */
             position: relative; 
             width: 100%; 
             height: 0; 
@@ -70,6 +83,59 @@
             overflow: hidden;
             border-radius: 8px; 
             will-change: transform;
+        }
+
+        /* Kolom Kanan: Tulisan */
+        .text-side {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .text-side h2 {
+            font-size: 2.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+
+        .text-side h3 {
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            margin-top: 15px;
+        }
+
+        .text-side p {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .text-side ul {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            line-height: 1.8;
+            padding-left: 20px;
+        }
+
+        /* Responsif untuk Layar HP agar otomatis bertumpuk vertikal */
+        @media (max-width: 900px) {
+            .about-wrapper {
+                flex-direction: column;
+                gap: 30px;
+            }
+            .canva-side {
+                width: 100%;
+            }
+            .text-side {
+                width: 100%;
+                text-align: center;
+            }
+            .text-side ul {
+                text-align: left;
+                display: inline-block;
+            }
         }
     </style>
 </head>
@@ -96,10 +162,33 @@
     <section>
         <div class="main-container" data-aos="fade-up" style="padding-top: 40px;">
             
-            <div class="canva-wrapper">
-                <iframe style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0; margin: 0;"
-                    src="https://www.canva.com/design/DAHGZL7VMkY/jxAW3_ymxUhWVtInttLA6g/view?embed" allowfullscreen="allowfullscreen" allow="fullscreen">
-                </iframe>
+            <div class="about-wrapper">
+                
+                <div class="canva-side">
+                    <iframe style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0; margin: 0;"
+                        src="https://www.canva.com/design/DAHGZL7VMkY/jxAW3_ymxUhWVtInttLA6g/view?embed" allowfullscreen="allowfullscreen" allow="fullscreen">
+                    </iframe>
+                </div>
+
+                <div class="text-side">
+                    <h2>Tentang Akadara</h2>
+                    <p>
+                        Selamat datang di Akadara, platform Anda untuk berita terbaru dan wawasan yang bermakna. 
+                        Kami berdedikasi untuk memberikan berita segar, cerita menarik, dan liputan mendalam.
+                    </p>
+                    <p>
+                        Misi kami adalah membuat informasi menjadi indah dan dapat diakses, dengan fokus pada kreativitas, 
+                        keakuratan, dan keterlibatan komunitas.
+                    </p>
+                    
+                    <h3>Visi & Misi Kami</h3>
+                    <ul>
+                        <li>Menjadi sumber berita digital utama.</li>
+                        <li>Menginspirasi melalui penceritaan yang kuat.</li>
+                        <li>Membangun koneksi antara orang-orang dan dunia.</li>
+                    </ul>
+                </div>
+
             </div>
 
         </div>
@@ -111,3 +200,5 @@
     </script>
 </body>
 </html>
+
+```
