@@ -22,7 +22,7 @@
             font-weight: 700;
         }
 
-        /* --- PERBAIKAN STRUKTUR DROPDOWN UTAMA --- */
+        /* --- FIX HOVER GAP DROPDOWN --- */
         .nav-dropdown-wrapper { 
             position: relative; 
             display: inline-block;
@@ -30,7 +30,7 @@
         
         .nav-dropdown-wrapper .dropbtn { 
             cursor: pointer;
-            padding: 15px 10px; /* Memperluas area sensitif kursor */
+            padding: 20px 10px !important; /* Dipertebal agar area deteksi kursor lebih luas */
             display: inline-flex;
             align-items: center;
         }
@@ -41,7 +41,6 @@
             transition: transform 0.3s; 
         }
         
-        /* Efek panah berputar saat di-hover */
         .nav-dropdown-wrapper:hover .dropbtn i { 
             transform: rotate(180deg); 
         }
@@ -50,21 +49,22 @@
         .nav-dropdown-content {
             display: none !important; 
             position: absolute; 
-            background-color: rgba(18, 18, 18, 0.98) !important; /* Latar gelap pekat agar tulisan terbaca */
+            background-color: rgba(18, 18, 18, 0.98) !important; 
             backdrop-filter: blur(10px); 
             min-width: 200px; 
-            top: 100%; 
+            top: 100%; /* Menempel pas di bawah tombol induk */
             left: 50%;
             transform: translateX(-50%); 
-            z-index: 999999 !important; /* Tingkat layer tertinggi agar tidak tertimpa apapun */
+            margin-top: 0px !important; /* PERBAIKAN: Jarak 0px agar kursor tidak mendeteksi celah kosong */
+            z-index: 999999 !important; 
             border-radius: 6px; 
             border: 1px solid rgba(211, 3, 3, 0.5);
             box-shadow: 0px 8px 24px rgba(211, 3, 3, 0.4); 
             overflow: hidden;
-            padding: 6px 0;
+            padding: 5px 0;
         }
 
-        /* Link di dalam Dropdown (Skill Product & Info PTN) */
+        /* Link di dalam Dropdown */
         .nav-dropdown-content a {
             color: #ffffff !important; 
             padding: 12px 20px !important; 
@@ -75,17 +75,16 @@
             font-size: 0.95rem !important;
             border-bottom: none !important; 
             font-weight: 500 !important;
-            pointer-events: auto !important; /* Memaksa elemen agar bisa menerima klik mouse */
+            pointer-events: auto !important; 
             transition: background 0.2s ease-in-out !important;
         }
 
-        /* Efek saat menu di dalam dropdown disorot */
         .nav-dropdown-content a:hover { 
             background-color: rgb(211, 3, 3) !important; 
             color: #ffffff !important;
         }
         
-        /* Memunculkan dropdown secara paksa hanya dengan CSS Hover */
+        /* Trigger Hover stabil */
         .nav-dropdown-wrapper:hover .nav-dropdown-content { 
             display: block !important; 
         }
@@ -111,3 +110,55 @@
     </style>
 </head>
 <body>
+    
+    <nav style="box-sizing: border-box !important;">
+        <div class="nav-container" style="padding-right: 80px !important; box-sizing: border-box !important;">
+            <div class="logo">Akadara</div>
+            <div class="links">
+                <a href="index.html">Home</a>
+                <a href="about.html" style="color: rgb(211, 3, 3); border-bottom: 2px solid rgb(211, 3, 3); font-weight: bold;">About Us</a>
+                <a href="contact.html">Design Product</a>
+                
+                <div class="nav-dropdown-wrapper">
+                    <a class="dropbtn">Product <i class="fa-solid fa-caret-down"></i></a>
+                    <div class="nav-dropdown-content">
+                        <a href="skill.html"><i class="fa-solid fa-briefcase"></i> Skill Product</a>
+                        <a href="info-ptn.html"><i class="fa-solid fa-graduation-cap"></i> Info PTN Python</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <i class="fa-solid fa-bars hamburg" onclick="hamburg()"></i>
+        <div class="dropdown">
+            <div class="links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="contact.html">Design Product</a> 
+                <a href="skill.html">Product (Skill)</a>
+                <a href="info-ptn.html">Product (Info PTN)</a>
+                <i class="fa-solid fa-xmark cancel" onclick="cancel()"></i> 
+            </div>
+        </div>
+    </nav>
+
+    <section>
+        <div class="main-container" data-aos="fade-up" style="padding-top: 60px !important;">
+            
+            <div class="canva-holder">
+                <div class="canva-wrapper">
+                    <iframe style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0; margin: 0;"
+                        src="https://www.canva.com/design/DAHGZL7VMkY/jxAW3_ymxUhWVtInttLA6g/view?embed" allowfullscreen="allowfullscreen" allow="fullscreen">
+                    </iframe>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({ offset: 0, duration: 800 });
+    </script>
+</body>
+</html>
