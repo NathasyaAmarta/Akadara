@@ -13,8 +13,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
 
     <style>
-        /* Terapkan font ke elemen yang kamu inginkan di sini, misal ke seluruh body atau h1-h6 */
-        body {h1, h2, h3 { font-family: 'Playfair Display', serif; }
+        /* Perbaikan: Mengatur font khusus untuk h1, h2, dan h3 tanpa merusak tag body */
+        h1, h2, h3 { 
+            font-family: 'Playfair Display', serif; 
+        }
 
         .nav-dropdown-wrapper {
             position: relative;
@@ -34,17 +36,9 @@
         .nav-dropdown-content {
             display: none;
             position: absolute;
-            background-color: rgba(18, 18, 18, 0.95);
-            backdrop-filter: blur(10px);
-            min-width: 190px;
-            top: 100%;
-            left: 50%;
-            transform: translateX(-50%);
-            margin-top: 10px;
         }
     </style>
 </head>
-<body>
     <nav>
         <div class="nav-container">
             <div class="logo" data-aos="zoom-in">
