@@ -1,41 +1,157 @@
 <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Akadara</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
+    <link rel="stylesheet" href="styles.css">
 
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>About Akadara</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+
     <style>
-        /* Mengatur agar semua judul menggunakan Playfair Display */
-        h1, h2, h3 {
+        /* Mengatur font khusus h1, h2, h3 dan elemen teks utama */
+        h1, h2, h3, .mainname {
             font-family: 'Playfair Display', Georgia, serif;
-            font-weight: 700; /* Ketebalan Bold */
+            font-weight: 700;
         }
-      </style>
-  </head>
+        
+        /* Dropdown CSS Styling */
+        .nav-dropdown-wrapper {
+            position: relative;
+            display: inline-block;
+        }
+        .nav-dropdown-wrapper .dropbtn {
+            cursor: pointer;
+        }
+        .nav-dropdown-wrapper .dropbtn i {
+            margin-left: 5px;
+            font-size: 0.8rem;
+            transition: transform 0.3s;
+        }
+        .nav-dropdown-wrapper:hover .dropbtn i {
+            transform: rotate(180deg);
+        }
+        .nav-dropdown-content {
+            display: none;
+            position: absolute;
+        }
+        .nav-dropdown-wrapper:hover .nav-dropdown-content {
+            display: block;
+        }
 
-  <body>
-    <header style="display: flex !important; justify-content: space-between !important; align-items: center !important; width: 100% !important; padding-left: 40px !important; padding-right: 40px !important; box-sizing: border-box !important;">
-      <div class="mainname">Akadara <span>.</span></div>
-      
-      <div class="links" style="display: flex !important; gap: 25px !important; margin-left: auto !important;">
-        <a href="index.html">Home</a>
-        <a href="about.html" style="color: rgb(211, 3, 3); border-bottom: 2px solid rgb(211, 3, 3);">About Us</a>
-        <a href="contact.html">Design Product</a>
-        <a href="skill.html">Product</a>
-      </div>
-</header>
+        /* Layout Khusus Halaman About */
+        .about-container {
+            padding: 60px 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+        @media (max-width: 768px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        .about-text h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #111;
+        }
+        .about-text p {
+            font-family: sans-serif; /* Supaya teks artikel tetap ringan dibaca */
+            line-height: 1.8;
+            color: #444;
+            margin-bottom: 15px;
+        }
+        
+        /* Bingkai Canva Embed */
+        .canva-responsive-container {
+            position: relative;
+            width: 100%;
+            height: 0;
+            padding-top: 56.2500%;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            overflow: hidden;
+            border-radius: 8px;
+            will-change: transform;
+        }
+    </style>
+</head>
+<body>
 
-    <div style="position: relative; width: 100%; height: 0; padding-top: 56.2500%;
- padding-bottom: 0; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); margin-top: 1.6em; margin-bottom: 0.9em; overflow: hidden;
- border-radius: 8px; will-change: transform;">
-  <iframe loading="lazy" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0;margin: 0;"
-    src="https://www.canva.com/design/DAHGZL7VMkY/jxAW3_ymxUhWVtInttLA6g/view?embed" allowfullscreen="allowfullscreen" allow="fullscreen">
-  </iframe>
-</div>
-<a href="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAHGZL7VMkY&#x2F;jxAW3_ymxUhWVtInttLA6g&#x2F;view?utm_content=DAHGZL7VMkY&amp;utm_campaign=designshare&amp;utm_medium=embeds&amp;utm_source=link" target="_blank" rel="noopener">ABOUT AKADARA</a> oleh RAINIE SABRINA EMMANUELA SIAHAAN
- 
-  </body>
+    <nav>
+        <div class="nav-container" style="display: flex; justify-content: space-between; align-items: center; width: 100%; padding: 20px 40px; box-sizing: border-box;">
+            <div class="logo mainname" data-aos="zoom-in" style="font-size: 1.8rem;">
+                Akadara<span style="color: rgb(211, 3, 3);">.</span>
+            </div>
+
+            <div class="links" style="display: flex; gap: 25px; margin-left: auto; align-items: center;">
+                <a href="index.html">Home</a>
+                <a href="about.html" style="color: rgb(211, 3, 3); border-bottom: 2px solid rgb(211, 3, 3); font-weight: bold;">About Us</a>
+                <a href="contact.html">Design Product</a>
+                
+                <div class="nav-dropdown-wrapper">
+                    <a href="#" class="dropbtn">Product <i class="fa-solid fa-caret-down"></i></a>
+                    <div class="nav-dropdown-content">
+                        <a href="skill.html"><i class="fa-solid fa-briefcase"></i> Skill Product</a>
+                        <a href="info-ptn.html"><i class="fa-solid fa-graduation-cap"></i> Info PTN Python</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <i class="fa-solid fa-bars hamburg" onclick="hamburg()" style="display: none;"></i>
+        <div class="dropdown">
+            <div class="links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="contact.html">Design Product</a> 
+                <a href="skill.html">Product (Skill)</a>
+                <a href="info-ptn.html">Product (Info PTN)</a>
+                <i class="fa-solid fa-xmark cancel" onclick="cancel()"></i> 
+            </div>
+        </div>
+    </nav>
+
+    <main class="about-container">
+        <div class="about-grid">
+            
+            <div class="about-visual" data-aos="fade-right">
+                <div class="canva-responsive-container">
+                    <iframe loading="lazy" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0; margin: 0;"
+                        src="https://www.canva.com/design/DAHGZL7VMkY/jxAW3_ymxUhWVtInttLA6g/view?embed" allowfullscreen="allowfullscreen" allow="fullscreen">
+                    </iframe>
+                </div>
+            </div>
+
+            <div class="about-text" data-aos="fade-left">
+                <h2>Our Journey</h2>
+                <p>
+                    Selamat datang di <strong>Akadara</strong>. Kami hadir sebagai wadah dinamis yang berfokus pada penyediaan konten informatif, pembaruan berita segar, serta pengembangan media edukasi yang dirancang secara visual dan estetik.
+                </p>
+                <p>
+                    Melalui integrasi kreativitas desain garmen, literasi teknologi, dan wawasan akademis, Akadara berkomitmen mendampingi langkah para generasi muda untuk terus mengeksplorasi potensi terbaik mereka.
+                </p>
+                <p>
+                    Jelajahi portofolio desain produk kami atau ikuti program peningkatan keahlian (skill product) yang telah kami persiapkan untuk mendukung masa depan Anda.
+                </p>
+            </div>
+
+        </div>
+    </main>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({ offset: 0, duration: 800 });
+    </script>
+    <script src="script.js"></script>
+</body>
 </html>
