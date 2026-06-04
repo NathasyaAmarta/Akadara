@@ -13,39 +13,132 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
     <style>
-        /* Mengatur font agar sama dengan halaman Home */
-        h1, h2, h3, .mainname {
+        /* Mengatur agar semua judul menggunakan Playfair Display */
+        h1, h2, h3, .logo {
             font-family: 'Playfair Display', Georgia, serif;
             font-weight: 700;
         }
 
-        /* FORCE INTERAKSI DROPDOWN */
-        .nav-dropdown-wrapper {
-            position: relative;
-            display: inline-block;
+        /* CSS DROPDOWN BIAR TETEP AKTIF DI HALAMAN INI */
+        .nav-dropdown-wrapper { 
+            position: relative; 
+            display: inline-block; 
         }
-        
-        .nav-dropdown-wrapper:hover .nav-dropdown-content {
-            display: block !important;
-            opacity: 1 !important;
-            visibility: visible !important;
+        .nav-dropdown-wrapper .dropbtn { 
+            cursor: pointer; 
+        }
+        .nav-dropdown-wrapper .dropbtn i { 
+            margin-left: 5px; 
+            font-size: 0.8rem; 
+            transition: transform 0.3s; 
+        }
+        .nav-dropdown-wrapper:hover .dropbtn i { 
+            transform: rotate(180deg); 
+        }
+        .nav-dropdown-content {
+            display: none; 
+            position: absolute; 
+            background-color: rgba(18, 18, 18, 0.95);
+            backdrop-filter: blur(10px); 
+            min-width: 190px; 
+            top: 100%; 
+            left: 50%;
+            transform: translateX(-50%); 
+            margin-top: 10px; 
+            z-index: 2000;
+            border-radius: 6px; 
+            border: 1px solid rgba(211, 3, 3, 0.4);
+            box-shadow: 0px 8px 24px rgba(211, 3, 3, 0.3); 
+            overflow: hidden;
+        }
+        .nav-dropdown-content a {
+            color: white !important; 
+            padding: 12px 18px !important; 
+            text-decoration: none !important;
+            display: flex !important; 
+            align-items: center; 
+            gap: 10px; 
+            font-size: 0.95rem !important;
+            border-bottom: none !important; 
+            transition: background 0.3s, color 0.3s !important;
+        }
+        .nav-dropdown-content a:hover { 
+            background-color: rgb(171, 0, 0) !important; 
+            color: white !important; 
+        }
+        .nav-dropdown-wrapper:hover .nav-dropdown-content { 
+            display: block; 
+        }
+
+        /* Pembungkus Tambahan untuk Menyusutkan Ukuran Canva PPT */
+        .canva-holder {
+            max-width: 850px; /* Ukuran pas di layar biar gak raksasa */
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        /* Pembungkus Khusus Konten Canva Anda */
+        .canva-wrapper {
+            position: relative; 
+            width: 100%; 
+            height: 0; 
+            padding-top: 56.2500%; /* Aspek rasio 16:9 murni */
+            box-shadow: 0 8px 32px rgba(211, 3, 3, 0.2); 
+            overflow: hidden;
+            border-radius: 12px; 
+            border: 1px solid rgba(211, 3, 3, 0.4);
+            will-change: transform;
         }
     </style>
 </head>
-
 <body>
-    <header style="display: flex !important; justify-content: space-between !important; align-items: center !important; width: 100% !important; padding-left: 40px !important; padding-right: 60px !important; box-sizing: border-box !important; position: relative !important; z-index: 9999 !important;">
-        <div class="mainname" data-aos="zoom-in">Akadara <span style="color: rgb(211, 3, 3);">.</span></div>
-        
-        <div class="links" style="display: flex !important; gap: 25px !important; margin-left: auto !important; margin-right: 20px !important; align-items: center !important;">
-            <a href="index.html">Home</a>
-            <a href="about.html" style="color: rgb(211, 3, 3); border-bottom: 2px solid rgb(211, 3, 3); font-weight: bold;">About Us</a>
-            <a href="contact.html">Design Product</a>
+    
+    <nav>
+        <div class="nav-container">
+            <div class="logo">Akadara</div>
+            <div class="links" style="margin-right: 20px !important;">
+                <a href="index.html">Home</a>
+                <a href="about.html" style="color: rgb(211, 3, 3); border-bottom: 2px solid rgb(211, 3, 3); font-weight: bold;">About Us</a>
+                <a href="contact.html">Design Product</a>
+                <div class="nav-dropdown-wrapper">
+                    <a href="#" class="dropbtn">Product <i class="fa-solid fa-caret-down"></i></a>
+                    <div class="nav-dropdown-content">
+                        <a href="skill.html"><i class="fa-solid fa-briefcase"></i> Skill Product</a>
+                        <a href="info-ptn.html"><i class="fa-solid fa-graduation-cap"></i> Info PTN Python</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <i class="fa-solid fa-bars hamburg" onclick="hamburg()"></i>
+        <div class="dropdown">
+            <div class="links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="contact.html">Design Product</a> 
+                <a href="skill.html">Product (Skill)</a>
+                <a href="info-ptn.html">Product (Info PTN)</a>
+                <i class="fa-solid fa-xmark cancel" onclick="cancel()"></i> 
+            </div>
+        </div>
+    </nav>
+
+    <section>
+        <div class="main-container" data-aos="fade-up" style="padding-top: 60px !important;">
             
-            <div class="nav-dropdown-wrapper">
-                <a class="dropbtn" style="text-decoration: none; color: inherit; cursor: pointer; display: inline-block; padding: 10px 0;">
-                    Product <i class="fa-solid fa-caret-down" style="margin-left: 5px; font-size: 0.8rem;"></i>
-                </a>
-                <div class="nav-dropdown-content" style="display: none; position: absolute; background-color: #ffffff !important; min-width: 180px; box-shadow: 0px 8px 16px rgba(0,0,0,0.3) !important; z-index: 99999 !important; border-radius: 4px; top: 100%; left: 0; padding: 5px 0;">
-                    <a href="skill.html" style="color: #333333 !important; padding: 12px 16px; text-decoration: none; display: block; border-bottom: none !important; font-weight: normal !important;"><i class="fa-solid fa-briefcase" style="margin-right: 8px;"></i> Skill Product</a>
-                    <a href="info-ptn.html" style="color: #333333 !important; padding: 12px 16px; text-decoration: none; display: block; border-bottom: none !important; font-weight: normal !important;"><i class="fa-solid fa-graduation-cap" style="margin-right: 8px;"></i> Info
+            <div class="canva-holder">
+                <div class="canva-wrapper">
+                    <iframe style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0; margin: 0;"
+                        src="https://www.canva.com/design/DAHGZL7VMkY/jxAW3_ymxUhWVtInttLA6g/view?embed" allowfullscreen="allowfullscreen" allow="fullscreen">
+                    </iframe>
+                </div>
+            </div>
+
+        </div>
+        </section>
+  <script src="script.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({ offset: 0, duration: 800 });
+    </script>
+</body>
+</html>
