@@ -108,7 +108,7 @@
             <form id="form-cari">
                 <div class="form-group">
                     <label for="rumpun">Pilih Kategori Jurusan:</label>
-                    <select id="rumpun" onchange="updateJurusan()">
+                    <select id="rumpun" onchange="jalankanPilihanJurusan()">
                         <option value="">-- Pilih Kategori --</option>
                         <option value="saintek">Saintek</option>
                         <option value="soshum">Soshum</option>
@@ -122,7 +122,7 @@
                     </select>
                 </div>
 
-                <button type="button" class="btn-search" onclick="cariPTN()">Cari Top 3 PTN</button>
+                <button type="button" class="btn-search" onclick="aksiCariPTN()">Cari Top 3 PTN</button>
             </form>
 
             <div id="hasil" style="display: none;"></div>
@@ -130,58 +130,62 @@
     </section>
 
     <script>
-        // Data Jurusan lo bawaan awal
-        const dataJurusan = {
+        // Data bank jurusan yang akan disuntikkan ke dropdown kedua
+        const listDataJurusan = {
             saintek: ["Kedokteran", "Teknik Informatika", "Sistem Informasi", "Teknik Sipil", "Farmasi"],
             soshum: ["Hukum", "Manajemen", "Akuntansi", "Ilmu Komunikasi", "Psikologi"]
         };
 
-        function updateJurusan() {
-            const rumpunSelect = document.getElementById("rumpun");
+        function jalankanPilihanJurusan() {
+            const kategoriSelect = document.getElementById("rumpun");
             const jurusanSelect = document.getElementById("jurusan");
-            const selectedRumpun = rumpunSelect.value;
+            const valueKategori = kategoriSelect.value.toLowerCase(); // Dipaksa jadi huruf kecil biar pas
 
-            // Reset dropdown jurusan
+            // Bersihkan dulu isi dropdown jurusan lama
             jurusanSelect.innerHTML = '<option value="">-- Pilih Jurusan --</option>';
 
-            if (selectedRumpun && dataJurusan[selectedRumpun]) {
+            if (valueKategori && listDataJurusan[valueKategori]) {
+                // Aktifkan dropdown jurusan
                 jurusanSelect.disabled = false;
-                dataJurusan[selectedRumpun].forEach(jurusan => {
-                    const option = document.createElement("option");
-                    option.value = jurusan.toLowerCase().replace(/\s+/g, "-");
-                    option.textContent = jurusan;
-                    jurusanSelect.appendChild(option);
+                
+                // Masukkan data jurusan baru satu per satu
+                listDataJurusan[valueKategori].forEach(function(namaJurusan) {
+                    const opsiBaru = document.createElement("option");
+                    opsiBaru.value = namaJurusan.toLowerCase().replace(/\s+/g, "-");
+                    opsiBaru.textContent = namaJurusan;
+                    jurusanSelect.appendChild(opsiBaru);
                 });
             } else {
+                // Kalau gak milih apa-apa, kunci lagi
                 jurusanSelect.disabled = true;
                 jurusanSelect.innerHTML = '<option value="">-- Pilih Kategori Dulu --</option>';
             }
         }
 
-        function cariPTN() {
-            const rumpun = document.getElementById("rumpun").value;
-            const jurusan = document.getElementById("jurusan").value;
-            const hasilDiv = document.getElementById("hasil");
+        function aksiCariPTN() {
+            const kat = document.getElementById("rumpun").value;
+            const jur = document.getElementById("jurusan").value;
+            const kotakHasil = document.getElementById("hasil");
 
-            if (!rumpun || !jurusan) {
+            if (!kat || !jur) {
                 alert("Harap pilih kategori dan jurusan terlebih dahulu!");
                 return;
             }
 
-            // Simulasi data hasil pencarian top 3 PTN lo
-            hasilDiv.style.display = "block";
-            hasilDiv.innerHTML = `
+            kotakHasil.style.display = "block";
+            kotakHasil.innerHTML = `
                 <div style="margin-top: 20px; padding: 15px; background: rgba(211, 3, 3, 0.1); border: 1px solid #d30303; border-radius: 8px;">
                     <h3 style="color: #fff; margin-bottom: 10px;">Rekomendasi Top 3 PTN:</h3>
                     <ol style="color: #ccc; padding-left: 20px; text-align: left;">
                         <li>Universitas Indonesia (UI)</li>
                         <li>Universitas Gadjah Mada (UGM)</li>
-                        <li>Institut Teknologi Bandung (ITB) / Universitas Airlangga (UNAIR)</li>
+                        <li>Institut Teknologi Bandung (ITB)</li>
                     </ol>
                 </div>
             `;
         }
     </script>
-    <script src="script.js"></script>
+
+    <script src="script.js"></script> 
 </body>
 </html>
