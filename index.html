@@ -16,7 +16,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
 
     <style>
-        /* FONT PLAYFAIR DISPLAY (Ditargetkan spesifik agar aman & tidak merusak elemen luar) */
+        /* TAMBAHAN PENGATUR LAPISAN AGAR DROPDOWN BISA DIPENCET */
+        nav {
+            position: relative !important;
+            z-index: 9999999 !important; /* Menaikkan lapisan navbar ke paling depan */
+        }
+
+        /* FONT PLAYFAIR DISPLAY */
         nav, 
         .logo, 
         .links a, 
@@ -37,7 +43,7 @@
             gap: 25px; 
         }
 
-        /* STRUKTUR DROPDOWN UTAMA (SAMA PERSIS DENGAN ABOUT US - ANTI-BUG) */
+        /* STRUKTUR DROPDOWN UTAMA (ANTI-BUG SAMA DENGAN ABOUT US) */
         .nav-dropdown-wrapper { 
             position: relative; 
             display: inline-block; 
@@ -72,7 +78,7 @@
             left: 50%;
             transform: translateX(-50%); 
             margin-top: 0px !important; 
-            z-index: 999999 !important; 
+            z-index: 99999999 !important; /* Berada di atas lapisan nav */
             border-radius: 6px; 
             border: 1px solid rgba(211, 3, 3, 0.4);
             box-shadow: 0px 8px 24px rgba(211, 3, 3, 0.4); 
@@ -91,7 +97,7 @@
             font-size: 0.95rem !important;
             border-bottom: none !important; 
             font-weight: normal !important;
-            pointer-events: auto !important; 
+            pointer-events: auto !important; /* Memaksa browser mengizinkan klik */
             transition: background 0.2s ease !important;
         }
         
