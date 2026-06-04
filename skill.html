@@ -108,7 +108,7 @@
             <form id="form-cari">
                 <div class="form-group">
                     <label for="rumpun">Pilih Kategori Jurusan:</label>
-                    <select id="rumpun">
+                    <select id="rumpun" onchange="updateJurusan()">
                         <option value="">-- Pilih Kategori --</option>
                         <option value="saintek">Saintek</option>
                         <option value="soshum">Soshum</option>
@@ -129,6 +129,59 @@
         </div>
     </section>
 
+    <script>
+        // Data Jurusan lo bawaan awal
+        const dataJurusan = {
+            saintek: ["Kedokteran", "Teknik Informatika", "Sistem Informasi", "Teknik Sipil", "Farmasi"],
+            soshum: ["Hukum", "Manajemen", "Akuntansi", "Ilmu Komunikasi", "Psikologi"]
+        };
+
+        function updateJurusan() {
+            const rumpunSelect = document.getElementById("rumpun");
+            const jurusanSelect = document.getElementById("jurusan");
+            const selectedRumpun = rumpunSelect.value;
+
+            // Reset dropdown jurusan
+            jurusanSelect.innerHTML = '<option value="">-- Pilih Jurusan --</option>';
+
+            if (selectedRumpun && dataJurusan[selectedRumpun]) {
+                jurusanSelect.disabled = false;
+                dataJurusan[selectedRumpun].forEach(jurusan => {
+                    const option = document.createElement("option");
+                    option.value = jurusan.toLowerCase().replace(/\s+/g, "-");
+                    option.textContent = jurusan;
+                    jurusanSelect.appendChild(option);
+                });
+            } else {
+                jurusanSelect.disabled = true;
+                jurusanSelect.innerHTML = '<option value="">-- Pilih Kategori Dulu --</option>';
+            }
+        }
+
+        function cariPTN() {
+            const rumpun = document.getElementById("rumpun").value;
+            const jurusan = document.getElementById("jurusan").value;
+            const hasilDiv = document.getElementById("hasil");
+
+            if (!rumpun || !jurusan) {
+                alert("Harap pilih kategori dan jurusan terlebih dahulu!");
+                return;
+            }
+
+            // Simulasi data hasil pencarian top 3 PTN lo
+            hasilDiv.style.display = "block";
+            hasilDiv.innerHTML = `
+                <div style="margin-top: 20px; padding: 15px; background: rgba(211, 3, 3, 0.1); border: 1px solid #d30303; border-radius: 8px;">
+                    <h3 style="color: #fff; margin-bottom: 10px;">Rekomendasi Top 3 PTN:</h3>
+                    <ol style="color: #ccc; padding-left: 20px; text-align: left;">
+                        <li>Universitas Indonesia (UI)</li>
+                        <li>Universitas Gadjah Mada (UGM)</li>
+                        <li>Institut Teknologi Bandung (ITB) / Universitas Airlangga (UNAIR)</li>
+                    </ol>
+                </div>
+            `;
+        }
+    </script>
     <script src="script.js"></script>
 </body>
 </html>
