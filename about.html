@@ -9,8 +9,13 @@
     <link rel="stylesheet" href="styles.css">
 
     <style>
-        /* PERBAIKAN UTAMA: Memaksa SEMUA elemen teks menggunakan Playfair Display */
-        * {
+        /* PERBAIKAN FONT: Menargetkan elemen secara spesifik agar tidak merusak layout CSS luar */
+        nav, 
+        .logo, 
+        .links a, 
+        .dropbtn, 
+        .nav-dropdown-content a, 
+        .dropdown .links a {
             font-family: 'Playfair Display', Georgia, serif !important;
         }
 
