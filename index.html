@@ -1,40 +1,279 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Akadara</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
-    <link rel="stylesheet" href="styles.css">
-
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
 
     <style>
+        /* Menggunakan font Playfair Display untuk seluruh halaman */
         * { 
             font-family: 'Playfair Display', serif !important; 
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
-        /* Seting susunan Navbar */
+        body {
+            background-color: #f8f1e7;
+            overflow-x: hidden;
+        }
+
+        /* Seting Navbar Utama */
         nav {
             display: flex !important;
             justify-content: space-between !important;
             align-items: center !important;
+            padding: 1.5rem 4rem;
             width: 100% !important;
-            box-sizing: border-box;
+            background-color: transparent;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 100;
         }
 
-        .nav-container {
-            display: flex !important;
-            align-items: center !important;
-            gap: 20px; /* Jarak antara Logo dan Menu Home */
+        .nav-left {
+            display: flex;
+            align-items: center;
+            gap: 20px;
         }
 
-        /* Gaya khusus untuk menu Home yang berdiri sendiri */
+        .logo {
+            font-size: 2.5rem;
+            color: #bfa071; /* Warna gold */
+            font-weight: 700;
+        }
+
         .home-desktop {
             display: inline-block !important;
+            text-decoration: none;
+            color: #1a237e; /* Warna navy gelap */
+            font-weight: 500;
+            font-size: 1.2rem;
+            position: relative;
+        }
+        
+        .home-desktop::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+            width: 100%;
+            height: 2px;
+            background-color: #1a237e;
+        }
+
+        /* Tombol Ikon Garis Tiga (Hamburger) */
+        .hamburg {
+            display: block !important;
+            cursor: pointer !important;
+            font-size: 2.2rem !important;
+            color: #1a237e; /* Warna navy */
+            margin-left: auto !important;
+        }
+
+        /* MENU DRAWER (SAMPING) */
+        .menu-drawer {
+            position: fixed;
+            top: 0;
+            right: -300px; /* Sembunyi di kanan */
+            width: 300px;
+            height: 100%;
+            background-color: #0d1252; /* Navy sangat gelap */
+            z-index: 200;
+            transition: right 0.4s ease;
+            display: flex;
+            flex-direction: column;
+            padding: 2rem;
+            box-shadow: -5px 0 15px rgba(0,0,0,0.3);
+        }
+
+        .menu-drawer.active {
+            right: 0; /* Muncul dari kanan */
+        }
+
+        /* Ikon Silang untuk menutup menu */
+        .cancel {
+            font-size: 2rem;
+            color: #f8f1e7;
+            cursor: pointer;
+            align-self: flex-end;
+            margin-bottom: 3rem;
+        }
+
+        /* Tautan Menu di dalam Drawer */
+        .drawer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .drawer-links a {
+            text-decoration: none;
+            color: #f8f1e7;
+            font-size: 1.3rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .drawer-links a:hover {
+            color: #bfa071; /* Hover gold */
+        }
+
+        /* Overlay gelap saat menu drawer aktif (tidak blur, hanya gelap) */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5); /* Gelap transparan */
+            z-index: 150;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.4s ease;
+        }
+
+        .overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* CSS Bawaan Konten Anda */
+        .main-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 100vh;
+            padding: 0 4rem;
+            margin-top: 80px; /* Agar konten tidak tertutup navbar */
+        }
+
+        .content {
+            width: 50%;
+        }
+
+        .content h1 {
+            font-size: 4rem;
+            color: #1a237e;
+            margin-bottom: 1.5rem;
+        }
+
+        .typewriter {
+            font-size: 1.5rem;
+            color: #333;
+            margin-bottom: 2rem;
+        }
+        
+        .typewriter span {
+            color: #bfa071;
+            font-weight: 700;
+        }
+
+        .content p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 3rem;
+        }
+
+        .btn button {
+            padding: 15px 40px;
+            font-size: 1.2rem;
+            background-color: #bfa071;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .btn button:hover {
+            background-color: #a68c62;
+        }
+
+        .image {
+            width: 40%;
+            text-align: right;
+        }
+
+        .image img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="overlay" id="menuOverlay" onclick="closeMenu()"></div>
+
+    <nav>
+        <div class="nav-left">
+            <div class="logo" data-aos="zoom-in">Akadara</div>
+            <a href="index.html" class="home-desktop">Home</a>
+        </div>
+
+        <i class="fa-solid fa-bars hamburg" onclick="openMenu()"></i>
+    </nav>
+
+    <div class="menu-drawer" id="sideDrawer">
+        <i class="fa-solid fa-xmark cancel" onclick="closeMenu()"></i>
+        
+        <div class="drawer-links">
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Design Product</a> 
+            <a href="skill.html">Product</a>
+        </div>
+    </div>
+
+    <section>
+        <div class="main-container">
+            <div class="content">
+                <h1 data-aos="fade-left">Akadara</h1>
+                <div class="typewriter" data-aos="fade-right">
+                    Your news is a mail away, <span>stay tuned!</span>
+                </div>
+                <p data-aos="flip-down">
+                    Selamat datang di Akadara, sumber terpercaya Anda untuk berita
+                    terbaru, cerita, dan informasi terkini yang disajikan dengan indah.
+                </p>
+                <div class="btn">
+                    <a href="about.html">
+                        <button>About Us</button>
+                    </a>
+                </div>
+            </div>
+            <div class="image" data-aos="zoom-in">
+                <img src="https://via.placeholder.com/600x600.png/f8f1e7?text=Akadara+Image" alt="Akadara">
+            </div>
+        </div>
+    </section>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({ offset: 0, duration: 1000 });
+
+        // JAVASCRIPT UNTUK MENGELOLA MENU DRAWER
+        function openMenu() {
+            document.getElementById("sideDrawer").classList.add("active");
+            document.getElementById("menuOverlay").classList.add("active");
+        }
+
+        function closeMenu() {
+            document.getElementById("sideDrawer").classList.remove("active");
+            document.getElementById("menuOverlay").classList.remove("active");
+        }
+    </script>
+</body>
+</html>            display: inline-block !important;
             text-decoration: none;
             color: inherit;
             font-weight: 500;
