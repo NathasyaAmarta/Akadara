@@ -1,4 +1,4 @@
-   <!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -19,13 +19,17 @@
             font-weight: 700;
         }
 
-        /* CSS Dropdown murni agar muncul saat di-hover */
+        /* FORCE INTERAKSI DROPDOWN (Memaksa menu muncul lewat CSS murni) */
         .nav-dropdown-wrapper {
             position: relative;
             display: inline-block;
         }
+        
+        /* Ketika area Product di-hover, paksa box dropdown mengubah display menjadi block */
         .nav-dropdown-wrapper:hover .nav-dropdown-content {
             display: block !important;
+            opacity: 1 !important;
+            visibility: visible !important;
         }
     </style>
 </head>
@@ -40,10 +44,12 @@
             <a href="contact.html">Design Product</a>
             
             <div class="nav-dropdown-wrapper">
-                <a href="#" class="dropbtn" style="text-decoration: none; color: inherit; cursor: pointer;">Product <i class="fa-solid fa-caret-down" style="margin-left: 5px; font-size: 0.8rem;"></i></a>
-                <div class="nav-dropdown-content" style="display: none; position: absolute; background-color: #ffffff; min-width: 180px; box-shadow: 0px 8px 16px rgba(0,0,0,0.2); z-index: 99999 !important; border-radius: 4px; top: 100%; left: 0;">
-                    <a href="skill.html" style="color: #333333 !important; padding: 12px 16px; text-decoration: none; display: block; border-bottom: none !important; font-weight: normal !important;"><i class="fa-solid fa-briefcase"></i> Skill Product</a>
-                    <a href="info-ptn.html" style="color: #333333 !important; padding: 12px 16px; text-decoration: none; display: block; border-bottom: none !important; font-weight: normal !important;"><i class="fa-solid fa-graduation-cap"></i> Info PTN Python</a>
+                <a class="dropbtn" style="text-decoration: none; color: inherit; cursor: pointer; display: inline-block; padding: 10px 0;">
+                    Product <i class="fa-solid fa-caret-down" style="margin-left: 5px; font-size: 0.8rem;"></i>
+                </a>
+                <div class="nav-dropdown-content" style="display: none; position: absolute; background-color: #ffffff !important; min-width: 180px; box-shadow: 0px 8px 16px rgba(0,0,0,0.3) !important; z-index: 99999 !important; border-radius: 4px; top: 100%; left: 0; padding: 5px 0;">
+                    <a href="skill.html" style="color: #333333 !important; padding: 12px 16px; text-decoration: none; display: block; border-bottom: none !important; font-weight: normal !important;"><i class="fa-solid fa-briefcase" style="margin-right: 8px;"></i> Skill Product</a>
+                    <a href="info-ptn.html" style="color: #333333 !important; padding: 12px 16px; text-decoration: none; display: block; border-bottom: none !important; font-weight: normal !important;"><i class="fa-solid fa-graduation-cap" style="margin-right: 8px;"></i> Info PTN Python</a>
                 </div>
             </div>
         </div>
