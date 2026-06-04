@@ -2,6 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us - Akadara</title>
     <link rel="stylesheet" href="styles.css">
@@ -13,76 +17,91 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
     <style>
-        /* Mengatur agar semua judul menggunakan Playfair Display */
         h1, h2, h3, .logo {
             font-family: 'Playfair Display', Georgia, serif;
             font-weight: 700;
         }
 
-        /* CSS DROPDOWN BIAR TETEP AKTIF DI HALAMAN INI */
+        /* --- PERBAIKAN STRUKTUR DROPDOWN UTAMA --- */
         .nav-dropdown-wrapper { 
             position: relative; 
-            display: inline-block; 
+            display: inline-block;
         }
+        
         .nav-dropdown-wrapper .dropbtn { 
-            cursor: pointer; 
+            cursor: pointer;
+            padding: 15px 10px; /* Memperluas area sensitif kursor */
+            display: inline-flex;
+            align-items: center;
         }
+        
         .nav-dropdown-wrapper .dropbtn i { 
-            margin-left: 5px; 
+            margin-left: 6px; 
             font-size: 0.8rem; 
             transition: transform 0.3s; 
         }
+        
+        /* Efek panah berputar saat di-hover */
         .nav-dropdown-wrapper:hover .dropbtn i { 
             transform: rotate(180deg); 
         }
+
+        /* Kotak Dropdown Menu */
         .nav-dropdown-content {
-            display: none; 
+            display: none !important; 
             position: absolute; 
-            background-color: rgba(18, 18, 18, 0.95);
+            background-color: rgba(18, 18, 18, 0.98) !important; /* Latar gelap pekat agar tulisan terbaca */
             backdrop-filter: blur(10px); 
-            min-width: 190px; 
+            min-width: 200px; 
             top: 100%; 
             left: 50%;
             transform: translateX(-50%); 
-            margin-top: 10px; 
-            z-index: 2000;
+            z-index: 999999 !important; /* Tingkat layer tertinggi agar tidak tertimpa apapun */
             border-radius: 6px; 
-            border: 1px solid rgba(211, 3, 3, 0.4);
-            box-shadow: 0px 8px 24px rgba(211, 3, 3, 0.3); 
+            border: 1px solid rgba(211, 3, 3, 0.5);
+            box-shadow: 0px 8px 24px rgba(211, 3, 3, 0.4); 
             overflow: hidden;
-        }
-        .nav-dropdown-content a {
-            color: white !important; 
-            padding: 12px 18px !important; 
-            text-decoration: none !important;
-            display: flex !important; 
-            align-items: center; 
-            gap: 10px; 
-            font-size: 0.95rem !important;
-            border-bottom: none !important; 
-            transition: background 0.3s, color 0.3s !important;
-        }
-        .nav-dropdown-content a:hover { 
-            background-color: rgb(171, 0, 0) !important; 
-            color: white !important; 
-        }
-        .nav-dropdown-wrapper:hover .nav-dropdown-content { 
-            display: block; 
+            padding: 6px 0;
         }
 
-        /* Pembungkus Tambahan untuk Menyusutkan Ukuran Canva PPT */
+        /* Link di dalam Dropdown (Skill Product & Info PTN) */
+        .nav-dropdown-content a {
+            color: #ffffff !important; 
+            padding: 12px 20px !important; 
+            text-decoration: none !important;
+            display: flex !important; 
+            align-items: center !important; 
+            gap: 12px; 
+            font-size: 0.95rem !important;
+            border-bottom: none !important; 
+            font-weight: 500 !important;
+            pointer-events: auto !important; /* Memaksa elemen agar bisa menerima klik mouse */
+            transition: background 0.2s ease-in-out !important;
+        }
+
+        /* Efek saat menu di dalam dropdown disorot */
+        .nav-dropdown-content a:hover { 
+            background-color: rgb(211, 3, 3) !important; 
+            color: #ffffff !important;
+        }
+        
+        /* Memunculkan dropdown secara paksa hanya dengan CSS Hover */
+        .nav-dropdown-wrapper:hover .nav-dropdown-content { 
+            display: block !important; 
+        }
+
+        /* --- KONTEN PPT CANVA --- */
         .canva-holder {
-            max-width: 850px; /* Ukuran pas di layar biar gak raksasa */
+            max-width: 850px; 
             width: 100%;
             margin: 0 auto;
         }
 
-        /* Pembungkus Khusus Konten Canva Anda */
         .canva-wrapper {
             position: relative; 
             width: 100%; 
             height: 0; 
-            padding-top: 56.2500%; /* Aspek rasio 16:9 murni */
+            padding-top: 56.2500%; 
             box-shadow: 0 8px 32px rgba(211, 3, 3, 0.2); 
             overflow: hidden;
             border-radius: 12px; 
@@ -92,53 +111,3 @@
     </style>
 </head>
 <body>
-    
-    <nav>
-        <div class="nav-container">
-            <div class="logo">Akadara</div>
-            <div class="links" style="margin-right: 20px !important;">
-                <a href="index.html">Home</a>
-                <a href="about.html" style="color: rgb(211, 3, 3); border-bottom: 2px solid rgb(211, 3, 3); font-weight: bold;">About Us</a>
-                <a href="contact.html">Design Product</a>
-                <div class="nav-dropdown-wrapper">
-                    <a href="#" class="dropbtn">Product <i class="fa-solid fa-caret-down"></i></a>
-                    <div class="nav-dropdown-content">
-                        <a href="skill.html"><i class="fa-solid fa-briefcase"></i> Skill Product</a>
-                        <a href="info-ptn.html"><i class="fa-solid fa-graduation-cap"></i> Info PTN Python</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <i class="fa-solid fa-bars hamburg" onclick="hamburg()"></i>
-        <div class="dropdown">
-            <div class="links">
-                <a href="index.html">Home</a>
-                <a href="about.html">About Us</a>
-                <a href="contact.html">Design Product</a> 
-                <a href="skill.html">Product (Skill)</a>
-                <a href="info-ptn.html">Product (Info PTN)</a>
-                <i class="fa-solid fa-xmark cancel" onclick="cancel()"></i> 
-            </div>
-        </div>
-    </nav>
-
-    <section>
-        <div class="main-container" data-aos="fade-up" style="padding-top: 60px !important;">
-            
-            <div class="canva-holder">
-                <div class="canva-wrapper">
-                    <iframe style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0; margin: 0;"
-                        src="https://www.canva.com/design/DAHGZL7VMkY/jxAW3_ymxUhWVtInttLA6g/view?embed" allowfullscreen="allowfullscreen" allow="fullscreen">
-                    </iframe>
-                </div>
-            </div>
-
-        </div>
-        </section>
-  <script src="script.js"></script>
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script>
-        AOS.init({ offset: 0, duration: 800 });
-    </script>
-</body>
-</html>
