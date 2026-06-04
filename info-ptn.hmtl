@@ -9,27 +9,92 @@
     <link rel="stylesheet" href="styles.css">
 
     <style>
-        /* CSS DROPDOWN BIAR TETEP AKTIF DI HALAMAN INI */
-        .nav-dropdown-wrapper { position: relative; display: inline-block; }
-        .nav-dropdown-wrapper .dropbtn { cursor: pointer; }
-        .nav-dropdown-wrapper .dropbtn i { margin-left: 5px; font-size: 0.8rem; transition: transform 0.3s; }
-        .nav-dropdown-wrapper:hover .dropbtn i { transform: rotate(180deg); }
-        .nav-dropdown-content {
-            display: none; position: absolute; background-color: rgba(18, 18, 18, 0.95);
-            backdrop-filter: blur(10px); min-width: 190px; top: 100%; left: 50%;
-            transform: translateX(-50%); margin-top: 10px; z-index: 2000;
-            border-radius: 6px; border: 1px solid rgba(211, 3, 3, 0.4);
-            box-shadow: 0px 8px 24px rgba(211, 3, 3, 0.3); overflow: hidden;
+        /* FONT PLAYFAIR DISPLAY (Sama dengan About Us) */
+        nav, 
+        .logo, 
+        .links a, 
+        .dropbtn, 
+        .nav-dropdown-content a, 
+        .dropdown .links a {
+            font-family: 'Playfair Display', Georgia, serif !important;
         }
-        .nav-dropdown-content a {
-            color: white !important; padding: 12px 18px !important; text-decoration: none !important;
-            display: flex !important; align-items: center; gap: 10px; font-size: 0.95rem !important;
-            border-bottom: none !important; transition: background 0.3s, color 0.3s !important;
-        }
-        .nav-dropdown-content a:hover { background-color: rgb(171, 0, 0) !important; color: white !important; }
-        .nav-dropdown-wrapper:hover .nav-dropdown-content { display: block; }
 
-        /* Layout Aplikasi Hugging Face */
+        /* Memaksa semua menu rata tengah horizontal secara vertikal */
+        .links {
+            display: flex !important;
+            align-items: center !important; 
+            gap: 25px; 
+        }
+
+        /* STRUKTUR DROPDOWN UTAMA (ANTI-BUG & BISA DIPENCET) */
+        .nav-dropdown-wrapper { 
+            position: relative; 
+            display: inline-block; 
+        }
+        
+        .nav-dropdown-wrapper .dropbtn { 
+            cursor: pointer; 
+            display: inline-flex;
+            align-items: center;
+            padding: 15px 0 !important; /* Area kursor luas vertikal */
+            color: white;
+            text-decoration: none;
+        }
+        
+        .nav-dropdown-wrapper .dropbtn i { 
+            margin-left: 5px; 
+            font-size: 0.8rem; 
+            transition: transform 0.3s; 
+        }
+        .nav-dropdown-wrapper:hover .dropbtn i { 
+            transform: rotate(180deg); 
+        }
+        
+        /* Kotak Dropdown Utama - Menempel Rapat 0px Tanpa Celah */
+        .nav-dropdown-content {
+            display: none !important; 
+            position: absolute; 
+            background-color: rgba(18, 18, 18, 0.98) !important;
+            backdrop-filter: blur(10px); 
+            min-width: 200px; 
+            top: 100% !important; 
+            left: 50%;
+            transform: translateX(-50%); 
+            margin-top: 0px !important; 
+            z-index: 999999 !important; 
+            border-radius: 6px; 
+            border: 1px solid rgba(211, 3, 3, 0.4);
+            box-shadow: 0px 8px 24px rgba(211, 3, 3, 0.4); 
+            overflow: hidden;
+            padding: 6px 0 !important;
+        }
+
+        /* Link di dalam Dropdown (Skill & Info PTN) */
+        .nav-dropdown-content a {
+            color: white !important; 
+            padding: 12px 20px !important; 
+            text-decoration: none !important;
+            display: flex !important; 
+            align-items: center !important; 
+            gap: 10px !important; 
+            font-size: 0.95rem !important;
+            border-bottom: none !important; 
+            font-weight: normal !important;
+            pointer-events: auto !important; /* Memaksa browser mengizinkan klik */
+            transition: background 0.2s ease !important;
+        }
+        
+        .nav-dropdown-content a:hover { 
+            background-color: rgb(171, 0, 0) !important; 
+            color: white !important; 
+        }
+        
+        /* Trigger Hover */
+        .nav-dropdown-wrapper:hover .nav-dropdown-content { 
+            display: block !important; 
+        }
+
+        /* Layout Aplikasi Hugging Face (Tidak Diubah) */
         .iframe-section {
             width: 100%; height: 90vh; display: flex; justify-content: center; align-items: center;
             padding: 20px; background-color: #121212;
@@ -43,6 +108,7 @@
     </style>
 </head>
 <body>
+    
     <nav>
         <div class="nav-container">
             <div class="logo">Akadara</div>
@@ -50,8 +116,9 @@
                 <a href="index.html">Home</a>
                 <a href="about.html">About Us</a>
                 <a href="contact.html">Design Product</a>
+                
                 <div class="nav-dropdown-wrapper">
-                    <a href="#" class="dropbtn">Product <i class="fa-solid fa-caret-down"></i></a>
+                    <a class="dropbtn">Product <i class="fa-solid fa-caret-down"></i></a>
                     <div class="nav-dropdown-content">
                         <a href="skill.html"><i class="fa-solid fa-briefcase"></i> Skill Product</a>
                         <a href="info-ptn.html"><i class="fa-solid fa-graduation-cap"></i> Info PTN Python</a>
@@ -77,6 +144,7 @@
             <iframe src="https://drawrwr-akadara.hf.space"></iframe>
         </div>
     </div>
+    
     <script src="script.js"></script>
 </body>
 </html>
