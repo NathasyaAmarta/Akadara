@@ -2,45 +2,39 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - Akadara</title>
+    <title>Akadara</title>
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
     <link rel="stylesheet" href="styles.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
 
     <style>
-        /* FONT PLAYFAIR DISPLAY */
-        nav, 
-        .logo, 
-        .links a, 
-        .dropbtn, 
-        .nav-dropdown-content a, 
-        .dropdown .links a {
+        /* 2. TETAP MEMAKSA FONT PLAYFAIR DISPLAY PILIHAN KELOMPOK LO */
+        nav, .logo, .links a, .dropbtn, .nav-dropdown-content a, .dropdown .links a,
+        .content h1, .typewriter, .content p, .btn button {
             font-family: 'Playfair Display', Georgia, serif !important;
         }
 
-        /* Memaksa semua menu rata tengah horizontal secara vertikal */
-        .links {
-            display: flex !important;
-            align-items: center !important; 
-            gap: 25px; 
-        }
-
-        /* STRUKTUR DROPDOWN UTAMA (ANTI-BUG) */
+        /* Struktur Dropdown Laptop (Biar Gak Bug Samaan Kayak About Us) */
         .nav-dropdown-wrapper { 
             position: relative; 
             display: inline-block; 
         }
-        
         .nav-dropdown-wrapper .dropbtn { 
             cursor: pointer; 
             display: inline-flex;
             align-items: center;
-            padding: 15px 0 !important; /* Area klik Product diperluas vertikal */
             color: white;
             text-decoration: none;
         }
-        
         .nav-dropdown-wrapper .dropbtn i { 
             margin-left: 5px; 
             font-size: 0.8rem; 
@@ -49,27 +43,22 @@
         .nav-dropdown-wrapper:hover .dropbtn i { 
             transform: rotate(180deg); 
         }
-        
-        /* Kotak Dropdown Utama - Menempel Rapat Tanpa Celah */
         .nav-dropdown-content {
-            display: none !important; 
+            display: none; 
             position: absolute; 
-            background-color: rgba(18, 18, 18, 0.98) !important;
+            background-color: rgba(18, 18, 18, 0.98);
             backdrop-filter: blur(10px); 
             min-width: 200px; 
-            top: 100% !important; /* Pas di bawah tombol utama */
+            top: 100%; 
             left: 50%;
             transform: translateX(-50%); 
-            margin-top: 0px !important; /* 0px agar tidak ada celah transparan yang mematikan hover */
-            z-index: 999999 !important; /* Lapisan paling depan agar tidak tertutup apapun */
+            z-index: 999999; 
             border-radius: 6px; 
             border: 1px solid rgba(211, 3, 3, 0.4);
             box-shadow: 0px 8px 24px rgba(211, 3, 3, 0.4); 
             overflow: hidden;
-            padding: 6px 0 !important;
+            padding: 6px 0;
         }
-
-        /* Link di dalam Dropdown (Skill & Info PTN) */
         .nav-dropdown-content a {
             color: white !important; 
             padding: 12px 20px !important; 
@@ -78,85 +67,50 @@
             align-items: center !important; 
             gap: 10px !important; 
             font-size: 0.95rem !important;
-            border-bottom: none !important; 
             font-weight: normal !important;
-            pointer-events: auto !important; /* MEMAKSA browser mengizinkan klik pada link */
             transition: background 0.2s ease !important;
         }
-        
         .nav-dropdown-content a:hover { 
             background-color: rgb(171, 0, 0) !important; 
-            color: white !important; 
         }
-        
-        /* Memaksa menu dropdown muncul stabil saat di-hover */
         .nav-dropdown-wrapper:hover .nav-dropdown-content { 
-            display: block !important; 
-        }
-
-        /* LAYOUT PPT CANVA */
-        .iframe-section {
-            width: 100%; 
-            display: flex; 
-            justify-content: center; 
-            align-items: center;
-            padding: 40px 20px; 
-        }
-        .iframe-container {
-            max-width: 850px; 
-            width: 100%; 
-            position: relative;
-            height: 0;
-            padding-top: 56.25%; 
-            background: rgba(26, 26, 26, 0.75);
-            border-radius: 12px; 
-            border: 1px solid rgba(211, 3, 3, 0.4);
-            box-shadow: 0 8px 32px rgba(211, 3, 3, 0.2); 
-            overflow: hidden;
-        }
-        .iframe-container iframe { 
-            position: absolute;
-            width: 100%; 
-            height: 100%; 
-            top: 0;
-            left: 0;
-            border: none; 
+            display: block; 
         }
     </style>
 </head>
-<body>
+<body> 
 
     <nav>
-    <div class="nav-container">
-        <div class="logo">Akadara</div>
-        
-        <div class="links desktop-menu">
-            <a href="index.html">Home</a>
-            <a href="about.html">About Us</a>
-            <a href="contact.html">Design Product</a>
+        <div class="nav-container">
+            <div class="logo">Akadara</div>
             
-            <div class="nav-dropdown-wrapper">
-                <a class="dropbtn">Product <i class="fa-solid fa-caret-down"></i></a>
-                <div class="nav-dropdown-content">
-                    <a href="skill.html">Produk Akhir</a>
-                    <a href="info-ptn.html">Game Scratch</a>
+            <div class="links desktop-menu">
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="contact.html">Design Product</a>
+                
+                <div class="nav-dropdown-wrapper">
+                    <a class="dropbtn">Product <i class="fa-solid fa-caret-down"></i></a>
+                    <div class="nav-dropdown-content">
+                        <a href="skill.html">Produk Akhir</a>
+                        <a href="info-ptn.html">Game Scratch</a>
+                    </div>
                 </div>
             </div>
+
+            <i class="fa-solid fa-bars hamburg" onclick="hamburg()"></i>
         </div>
 
-        <i class="fa-solid fa-bars hamburg" onclick="hamburg()"></i>
-    </div>
-
-    <div class="dropdown">
-        <div class="links">
-            <i class="fa-solid fa-xmark cancel" onclick="cancelMenu()"></i> 
-            <a href="index.html">Home</a>
-            <a href="about.html">About Us</a>
-            <a href="contact.html">Design Product</a> 
-            <a href="skill.html">Produk Akhir</a>
-            <a href="info-ptn.html">Game Scratch</a>
+        <div class="dropdown">
+            <div class="links">
+                <i class="fa-solid fa-xmark cancel" onclick="cancelMenu()"></i> 
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="contact.html">Design Product</a> 
+                <a href="skill.html">Produk Akhir</a>
+                <a href="info-ptn.html">Game Scratch</a>
+            </div>
         </div>
-    </div>
     </nav>
 
     <div class="iframe-section" data-aos="fade-up">
