@@ -16,23 +16,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
 
     <style>
-        /* TAMBAHAN PENGATUR LAPISAN AGAR DROPDOWN BISA DIPENCET */
+        /* DROPDOWN & LAPISAN NAVBAR */
         nav {
             position: relative !important;
             z-index: 9999999 !important;
         }
 
-        /* FONT PLAYFAIR DISPLAY */
-        nav, 
-        .logo, 
-        .links a, 
-        .dropbtn, 
-        .nav-dropdown-content a, 
-        .dropdown .links a,
-        .content h1,
-        .typewriter,
-        .content p,
-        .btn button {
+        nav, .logo, .links a, .dropbtn, .nav-dropdown-content a, .dropdown .links a,
+        .content h1, .typewriter, .content p, .btn button {
             font-family: 'Playfair Display', Georgia, serif !important;
         }
 
@@ -42,7 +33,6 @@
             gap: 25px; 
         }
 
-        /* STRUKTUR DROPDOWN UTAMA */
         .nav-dropdown-wrapper { 
             position: relative; 
             display: inline-block; 
@@ -107,7 +97,7 @@
             display: block !important; 
         }
 
-        /* MODIFIKASI: MAKSA LOGO FULL SATU LINGKARAN MERAH UTUH */
+        /* STRUKTUR GAMBAR HERO KANAN */
         .image {
             position: relative !important;
             display: flex !important;
@@ -121,14 +111,14 @@
             display: block !important;
         }
 
-        /* Wadah Penempatan Logo dibuat 100% biar pas seukuran lingkaran merah bg.jpg */
+        /* Wadah Penempatan Logo 100% Menutup Lingkaran Merah */
         .logo-center-overlay {
             position: absolute !important;
             top: 50% !important;
             left: 50% !important;
             transform: translate(-50%, -50%) !important;
-            width: 100% !important;  /* DIUBAH JADI 100% BIAR MENUHIN LINGKARAN */
-            height: 100% !important; /* DIUBAH JADI 100% BIAR MENUHIN LINGKARAN */
+            width: 100% !important;  
+            height: 100% !important; 
             display: flex !important;
             justify-content: center !important;
             align-items: center !important;
@@ -139,8 +129,8 @@
         .logo-center-overlay img {
             width: 100% !important;
             height: 100% !important;
-            object-fit: fill; /* Dipaksa melar penuh menutup seluruh background lingkaran */
-            border-radius: 50% !important; /* WAJIB: memotong ujung logo biar ikutan bulat sempurna semangkok merah */
+            object-fit: fill !important; 
+            border-radius: 50% !important; /* Memotong sudut gambar biar bulat semangkok merah */
         }
     </style>
 </head>
@@ -200,7 +190,7 @@
                 <img src="bg.jpg" alt="Akadara">
                 
                 <div class="logo-center-overlay">
-                    <img src="logo-akadara.jpeg" alt="Logo Akadara">
+                    <img src="logo akadara.png.jpeg" alt="Logo Akadara">
                 </div>
             </div>
         </div>
