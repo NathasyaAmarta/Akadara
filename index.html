@@ -134,12 +134,12 @@
             z-index: 10;
         }
 
-        .lingkaran-merah-logo img {
-            width: 75%;
-            height: 75%;
-            object-fit: contain;
-            border-radius: 0% !important; /* Mencegah gambar logo ikut melar melengkung */
-        }
+       .lingkaran-merah-logo img {
+    width: 100%;         /* Diubah dari 90% jadi 100% biar gak ada celah */
+    height: 100%;        /* Diubah dari 90% jadi 100% biar gak ada celah */
+    object-fit: cover;   /* Ganti dari 'contain' ke 'cover' biar nge-zoom full memenuhi lingkaran */
+    border-radius: 50% !important; /* Wajib diganti ke 50% biar gambar logonya ikut terpotong bulat sempurna mengikuti lingkaran */
+}
     </style>
 </head>
 <body> 
