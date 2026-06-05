@@ -43,7 +43,7 @@
             gap: 25px; 
         }
 
-        /* STRUKTUR DROPDOWN UTAMA (ANTI-BUG SAMA DENGAN ABOUT US) */
+        /* STRUKTUR DROPDOWN UTAMA */
         .nav-dropdown-wrapper { 
             position: relative; 
             display: inline-block; 
@@ -78,7 +78,7 @@
             left: 50%;
             transform: translateX(-50%); 
             margin-top: 0px !important; 
-            z-index: 99999999 !important; /* Berada di atas lapisan nav */
+            z-index: 99999999 !important;
             border-radius: 6px; 
             border: 1px solid rgba(211, 3, 3, 0.4);
             box-shadow: 0px 8px 24px rgba(211, 3, 3, 0.4); 
@@ -97,7 +97,7 @@
             font-size: 0.95rem !important;
             border-bottom: none !important; 
             font-weight: normal !important;
-            pointer-events: auto !important; /* Memaksa browser mengizinkan klik */
+            pointer-events: auto !important;
             transition: background 0.2s ease !important;
         }
         
@@ -111,7 +111,7 @@
             display: block !important; 
         }
 
-        /* STYLING LINGKARAN MERAH UTK LOGO KAMPUS */
+        /* LAYOUT GAMBAR & BINGKAI LINGKARAN LOGO FULL */
         .image-container-wrapper {
             position: relative;
             display: inline-block;
@@ -119,27 +119,28 @@
 
         .lingkaran-merah-logo {
             position: absolute;
-            bottom: -20px;
-            left: -20px;
-            width: 130px;
-            height: 130px;
-            border: 4px solid rgb(211, 3, 3); /* Lingkaran Merah Khas Akadara */
+            bottom: -30px;
+            left: -30px;
+            width: 200px;  /* Ukuran lingkaran yang proporsional dan besar */
+            height: 200px; /* Ukuran lingkaran yang proporsional dan besar */
+            border: 5px solid rgb(211, 3, 3); /* Ketebalan garis lingkaran merah */
             border-radius: 50%;
             background-color: #121212;
             display: flex;
             justify-content: center;
             align-items: center;
             overflow: hidden;
-            box-shadow: 0px 0px 20px rgba(211, 3, 3, 0.6);
+            box-shadow: 0px 0px 25px rgba(211, 3, 3, 0.7);
             z-index: 10;
         }
 
-       .lingkaran-merah-logo img {
-    width: 100%;         /* Diubah dari 90% jadi 100% biar gak ada celah */
-    height: 100%;        /* Diubah dari 90% jadi 100% biar gak ada celah */
-    object-fit: cover;   /* Ganti dari 'contain' ke 'cover' biar nge-zoom full memenuhi lingkaran */
-    border-radius: 50% !important; /* Wajib diganti ke 50% biar gambar logonya ikut terpotong bulat sempurna mengikuti lingkaran */
-}
+        .lingkaran-merah-logo img {
+            width: 100% !important;   /* Memaksa lebar gambar 100% */
+            height: 100% !important;  /* Memaksa tinggi gambar 100% */
+            object-fit: fill;         /* Dipaksa melar mengisi seluruh ruang lingkaran */
+            border-radius: 50% !important; /* Memotong gambar secara bulat sempurna di tepi border */
+            transform: scale(1.2);    /* Menembus celah/padding kosong bawaan file gambar agar full total */
+        }
     </style>
 </head>
 <body> 
@@ -164,53 +165,4 @@
 
         <i class="fa-solid fa-bars hamburg" onclick="hamburg()"></i>
 
-        <div class="dropdown">
-            <div class="links">
-                <a href="index.html" style="color: rgb(211, 3, 3);">Home</a>
-                <a href="about.html">About Us</a>
-                <a href="contact.html">Design Product</a> 
-                <a href="skill.html">Product (Skill)</a>
-                <a href="info-ptn.html">Product (Info PTN)</a>
-                <i class="fa-solid fa-xmark cancel" onclick="cancel()"></i> 
-            </div>
-        </div>
-    </nav>
-
-    <section>
-        <div class="main-container">
-            <div class="content">
-                <h1 data-aos="fade-left">Akadara</h1>
-                <div class="typewriter" data-aos="fade-right">
-                    Your news is a mail away, <span>stay tuned!</span>
-                </div>
-                <p data-aos="flip-down">
-                    Welcome to Akadara, your trusted source for fresh updates,
-                    stories, and breaking news delivered beautifully.
-                </p>
-                <div class="btn">
-                    <a href="about.html">
-                        <button>About Us</button>
-                    </a>
-                </div>
-            </div>
-            
-            <div class="image" data-aos="zoom-in">
-                <div class="image-container-wrapper">
-                    <img src="bg.jpg" alt="Akadara">
-                    
-                    <div class="lingkaran-merah-logo">
-                        <img src="logo akadara.png.jpeg" alt="Logo PTN">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script>
-        AOS.init({ offset: 0 });
-    </script>
-    <script src="script.js"></script>
-</body>
-</html>
-</html>
+        <div class="dropdown
