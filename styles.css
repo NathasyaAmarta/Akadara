@@ -18,10 +18,9 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   overflow-x: hidden;
-  background-color: #121212; /* Warna alternatif kalau gambar gagal load */
+  background-color: #121212;
 }
 
-/* Fix khusus untuk halaman produk (skill.html) agar tidak berantakan */
 body.product-page {
   min-height: 100vh;
   display: flex;
@@ -37,6 +36,9 @@ nav {
   position: sticky;
   top: 0;
   z-index: 1000;
+  background: rgba(18, 18, 18, 0.85);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
 .nav-container {
@@ -71,29 +73,54 @@ nav {
   border-bottom: 2px solid rgb(211, 3, 3);
 }
 
-.hamburg,
-.cancel {
+/* Tombol Menu Tiga Garis (Sembunyi di Laptop) */
+.hamburg {
   display: none;
   color: white;
   font-size: 2rem;
   cursor: pointer;
+  z-index: 1001;
 }
 
+/* Dropdown Menu untuk Layar HP */
 .dropdown {
-  position: absolute;
+  position: fixed;
   top: 0;
+  left: 0;
   width: 100%;
-  transform: translateY(-500px);
-  backdrop-filter: blur(10px);
-  transition: 0.3s;
-  z-index: 999;
+  height: 100vh;
+  background-color: rgba(18, 18, 18, 0.98);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(-100%);
+  transition: transform 0.4s ease;
+  z-index: 999998;
 }
 
 .dropdown .links {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  gap: 30px;
   padding: 20px;
   text-align: center;
+}
+
+.dropdown .links a {
+  font-size: 1.5rem;
+  color: white;
+  text-decoration: none;
+}
+
+.dropdown .cancel {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 2.5rem;
+  color: white;
+  cursor: pointer;
 }
 
 /* ==========================================
@@ -183,7 +210,7 @@ section {
    ========================================== */
 .product-section-only {
   width: 100%;
-  flex: 1; /* Memaksa mengisi sisa layar kosong */
+  flex: 1;
   display: flex;
   justify-content: center;
   align-items: center; 
@@ -191,22 +218,21 @@ section {
   box-sizing: border-box;
 }
 
-/* Container utama produk (Glassmorphism Dark) */
 .container-product { 
   width: 100%;
   max-width: 500px; 
   padding: 30px; 
-  background: rgba(26, 26, 26, 0.75); /* Hitam transparan mengikuti bg.jpg */
+  background: rgba(26, 26, 26, 0.75);
   backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(15px);
   border-radius: 12px; 
-  box-shadow: 0 4px 20px rgba(255, 0, 0, 0.25); /* Bayangan merah soft */
+  box-shadow: 0 4px 20px rgba(255, 0, 0, 0.25);
   border: 1px solid #333; 
 }
 
 .container-product h2 {  
   text-align: center !important;  
-  color: #cc0000 !important; /* Paksa balik ke merah menyala awal */
+  color: #cc0000 !important;
   font-size: 1.8rem !important;
   filter: drop-shadow(0px 2px 8px rgba(243, 74, 74, 0.6)) !important;
   margin-bottom: 5px !important;  
@@ -214,23 +240,13 @@ section {
   letter-spacing: 1px !important;
 }
 
-/* Targetkan kelasnya langsung dengan proteksi penuh */
 .product-desc {
   text-align: center !important;
   font-size: 0.9rem !important;
-  color: #bbbbbb !important; /* Paksa balik ke abu-abu terang agar gak jadi hitam */
-  color: #bbbbbb !important; /* Warna abu-abu terang */
+  color: #bbbbbb !important;
   margin-bottom: 25px !important;
 }
 
-/* JAGA-JAGA: Jika di HTML lo tulisan itu dibungkus tag p atau span di dalamnya */
-.product-desc p, 
-.product-desc span,
-.container-product p {
-  color: #bbbbbb !important; /* Paksa semua teks di area deskripsi jadi abu-abu */
-}
-
-/* Layout Form Input */
 .form-group {
   margin-bottom: 15px;
 }
@@ -243,7 +259,6 @@ section {
   font-size: 0.95rem;
 }
 
-/* Dropdown Select */
 .form-group select { 
   width: 100%; 
   padding: 12px; 
@@ -263,14 +278,6 @@ section {
   box-shadow: 0 0 8px rgba(204, 0, 0, 0.5);
 }
 
-.form-group select:disabled {
-  background-color: #1f1f1f;
-  color: #666;
-  border-color: #2a2a2a;
-  cursor: not-allowed;
-}
-
-/* Tombol Cari PTN */
 .btn-search { 
   width: 100%; 
   padding: 12px; 
@@ -282,16 +289,12 @@ section {
   font-weight: bold; 
   cursor: pointer; 
   margin-top: 15px; 
-  transition: background 0.3s, transform 0.1s, box-shadow 0.3s;
+  transition: 0.3s;
 }
 
 .btn-search:hover { 
   background-color: #ff1a1a; 
   box-shadow: 0 0 15px rgba(255, 26, 26, 0.5);
-}
-
-.btn-search:active {
-  transform: scale(0.98); 
 }
 
 /* ==========================================
@@ -301,7 +304,7 @@ section {
   font-weight: 500; 
   margin-top: 25px; 
   padding: 20px; 
-  background: #2a0808; /* Maroon Gelap biar menyatu dan tidak merusak mata */
+  background: #2a0808; 
   border-left: 6px solid #ff3333; 
   border-radius: 4px; 
   border: 1px solid #4a1515;
@@ -311,11 +314,10 @@ section {
 #hasil > p {
   margin-top: 0;
   margin-bottom: 15px;
-  color: #ff4d4d; /* Merah muda lembut */
+  color: #ff4d4d; 
   font-size: 0.95rem;
 }
 
-/* Wadah 3 Kolom PTN Sejajar */
 #container-logo {
   display: flex;
   justify-content: space-between;
@@ -325,42 +327,6 @@ section {
   border-top: 1px dashed #cc0000; 
 }
 
-/* Kotak Tiap Kampus */
-.item-ptn {
-  width: 30%; 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  opacity: 0; 
-  transform: translateY(20px); 
-  animation: munculSatuSatu 0.5s ease-out forwards; 
-}
-
-/* Logo PTN */
-.logo-campus {
-  width: 95px;          
-  height: 95px;         
-  object-fit: contain;  
-  filter: drop-shadow(0px 2px 6px rgba(255, 255, 255, 0.2)); /* Glow putih tipis */
-  transition: transform 0.2s, filter 0.2s;
-  margin-bottom: 8px; 
-}
-
-/* Nama Kampus di Bawah Logo */
-.nama-ptn-bawah {
-  font-size: 11px;
-  font-weight: bold;
-  color: #ffffff; /* Putih bersih kontras di atas maroon */
-  margin: 0;
-  line-height: 1.3;
-}
-
-/* =========================================================
-   PERBAIKAN TERAKHIR: ANGKAT LAPISAN ELEMEN (Z-INDEX FIX)
-   ========================================================= */
-
-/* 1. Kotak Pembungkus Tiap Kampus */
 .item-ptn {
   width: 30%; 
   display: flex;
@@ -369,45 +335,72 @@ section {
   text-align: center;
   opacity: 0; 
   transform: translateY(25px); 
-
-  /* Tambahan Baru: Angkat posisi elemen biar gak kehalang box lain */
   position: relative;
   z-index: 10; 
-
-  /* Animasi muncul tetap smooth */
   animation: munculSatuSatu 0.6s cubic-bezier(0.25, 1, 0.5, 1) forwards; 
 }
 
-/* 2. Gambar Logo Kampus */
 .logo-campus {
-  width: 90px;          
-  height: 90px;         
+  width: 90px;           
+  height: 90px;          
   object-fit: contain;  
   filter: drop-shadow(0px 2px 6px rgba(255, 255, 255, 0.2)); 
   margin-bottom: 8px; 
-
-  /* Transisi wajib ada di sini agar efek hover-nya smooth */
   transition: transform 0.2s ease, filter 0.2s ease; 
-
-  /* Supaya sensor mouse fokus ke kotak luar */
   pointer-events: none; 
 }
 
-/* 3. Efek Pas Mouse Menempel (Hover) - SEKARANG DIPICU DARI DUA SISI */
-.item-ptn:hover .logo-campus,
-.logo-campus:hover {
-  transform: scale(1.1) !important; /* !important buat maksa browser mengutamakan hover ini */
+.nama-ptn-bawah {
+  font-size: 11px;
+  font-weight: bold;
+  color: #ffffff; 
+  margin: 0;
+  line-height: 1.3;
+}
+
+.item-ptn:hover .logo-campus {
+  transform: scale(1.1) !important; 
   filter: drop-shadow(0px 4px 12px rgba(255, 255, 255, 0.8)) !important; 
 }
 
-/* 4. Rumus Animasi Muncul Bergantian */
 @keyframes munculSatuSatu {
-  0% {
-    opacity: 0;
-    transform: translateY(25px);
+  0% { opacity: 0; transform: translateY(25px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* ==========================================
+   6. RESPONSIVE MEDIA QUERY (HP FIX)
+   ========================================== */
+@media screen and (max-width: 768px) {
+  .desktop-menu {
+    display: none !important;
   }
-  100% {
-    opacity: 1;
-    transform: translateY(0); 
+
+  .hamburg {
+    display: block !important;
   }
+
+  .nav-container {
+    justify-content: space-between;
+    padding: 0 25px;
+  }
+
+  .main-container {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+    gap: 40px;
+  }
+
+  .content { width: 100%; }
+  .content h1 { font-size: 2.2rem; }
+  .image { width: 280px; height: 280px; }
+  
+  #container-logo {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .item-ptn { width: 100%; }
 }
