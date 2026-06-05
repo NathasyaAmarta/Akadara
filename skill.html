@@ -7,12 +7,23 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+
     <style>
-        /* SINKRONISASI DROPDOWN NAVBAR BIAR STABIL */
+        /* SINKRONISASI DROPDOWN NAVBAR BIAR STABIL & PAKAI FONT PLAYFAIR DISPLAY */
         nav {
             position: relative !important;
             z-index: 9999999 !important;
         }
+        
+        /* Paksa semua elemen di navbar dan konten utama pakai font Playfair Display */
+        nav, nav *, .logo, .links a, .dropbtn, .nav-dropdown-content a, .dropdown .links a,
+        .product-section-only h2, .product-section-only p, .btn-search, #hasil h3 {
+            font-family: 'Playfair Display', Georgia, serif !important;
+        }
+
         .links {
             display: flex !important;
             align-items: center !important; 
@@ -164,10 +175,3 @@
                 <a class="badge-link" href="https://colab.research.google.com/drive/1V4Nqdle6lMmakuln9r9sdvMNTHyILPyn?usp=sharing" target="_blank">
                     <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" style="height: 38px; display: block;">
                 </a>
-            </div>
-        </div>
-    </section>
-
-    <script src="script.js"></script> 
-</body>
-</html>
