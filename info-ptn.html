@@ -6,7 +6,7 @@
     <meta http-equiv="Pragma" content="no-cache" />
     <meta http-equiv="Expires" content="0" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Akadara - Info PTN Python</title>
+    <title>Akadara - Scratch Game</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
     <link rel="stylesheet" href="styles.css">
@@ -23,7 +23,7 @@
         }
 
         nav, .logo, .links a, .dropbtn, .nav-dropdown-content a, .dropdown .links a,
-        .colab-section h1, .colab-section p, .btn-colab {
+        .game-section h1, .game-section p {
             font-family: 'Playfair Display', Georgia, serif !important;
         }
 
@@ -97,8 +97,8 @@
             display: block !important; 
         }
 
-        /* STYLING COLOBOX PREVIEW REPLACEMENT */
-        .colab-section {
+        /* STYLING AREA GAME SCRATCH */
+        .game-section {
             width: 100%;
             min-height: 90vh;
             display: flex;
@@ -109,80 +109,43 @@
             color: white;
         }
 
-        .colab-section h1 {
+        .game-section h1 {
             font-size: 2.8rem;
             margin-bottom: 15px;
             text-align: center;
         }
 
-        .colab-section p {
+        .game-section p {
             font-size: 1.1rem;
             color: #bbbbbb;
-            margin-bottom: 40px;
+            margin-bottom: 30px;
             text-align: center;
             max-width: 650px;
             line-height: 1.6;
         }
 
-        /* Wadah Launching Program Premium */
-        .program-card {
+        /* Bingkai Premium Game Scratch */
+        .scratch-frame-container {
             width: 100%;
-            max-width: 600px;
+            max-width: 680px; /* Lebar optimal rasio layar Scratch */
             background: rgba(26, 26, 26, 0.65);
             backdrop-filter: blur(15px);
             -webkit-backdrop-filter: blur(15px);
-            border: 1px solid rgba(211, 3, 3, 0.3);
+            border: 1px solid rgba(211, 3, 3, 0.4);
             border-radius: 16px;
-            padding: 40px 30px;
-            box-shadow: 0 10px 40px rgba(211, 3, 3, 0.15);
+            padding: 20px;
+            box-shadow: 0 10px 40px rgba(211, 3, 3, 0.25);
             display: flex;
             flex-direction: column;
-            align-items: center;
-            text-align: center;
-            gap: 25px;
+            overflow: hidden;
         }
 
-        .program-card i.python-icon {
-            font-size: 4rem;
-            color: #ffde57;
-            filter: drop-shadow(0 0 15px rgba(255, 222, 87, 0.5));
-        }
-
-        .badge-link {
-            transition: transform 0.2s ease;
-        }
-
-        .badge-link:hover {
-            transform: scale(1.08);
-        }
-
-        /* Tombol Utama */
-        .btn-colab {
+        .scratch-iframe {
             width: 100%;
-            max-width: 280px;
-            height: 55px;
-            background: rgb(171, 0, 0);
-            color: white;
+            height: 480px; /* Tinggi standar layar game scratch agar pas */
             border: none;
             border-radius: 8px;
-            font-weight: 700;
-            font-size: 1.05rem;
-            cursor: pointer;
-            transition: 0.3s;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 12px;
-            text-decoration: none;
-            box-shadow: 0 4px 15px rgba(171, 0, 0, 0.4);
-            margin-top: 10px;
-        }
-
-        .btn-colab:hover {
-            transform: scale(1.03);
-            background: transparent;
-            border: 2px solid rgb(211, 3, 3);
-            box-shadow: 0 0 25px rgb(211, 3, 3);
+            background: #000;
         }
     </style>
 </head>
@@ -200,7 +163,7 @@
                     <a class="dropbtn" style="color: rgb(211, 3, 3); border-bottom: 2px solid rgb(211, 3, 3); font-weight: bold;">Product <i class="fa-solid fa-caret-down"></i></a>
                     <div class="nav-dropdown-content">
                         <a href="skill.html"><i class="fa-solid fa-briefcase"></i> Skill Product</a>
-                        <a href="info-ptn.html" style="color: rgb(211, 3, 3) !important;"><i class="fa-solid fa-graduation-cap"></i> Info PTN Python</a>
+                        <a href="info-ptn.html" style="color: rgb(211, 3, 3) !important;"><i class="fa-solid fa-gamepad"></i> Scratch Game</a>
                     </div>
                 </div>
             </div>
@@ -214,36 +177,11 @@
                 <a href="about.html">About Us</a>
                 <a href="contact.html">Design Product</a> 
                 <a href="skill.html">Product (Skill)</a>
-                <a href="info-ptn.html" style="color: rgb(211, 3, 3);">Product (Info PTN)</a>
+                <a href="info-ptn.html" style="color: rgb(211, 3, 3);">Product (Scratch Game)</a>
                 <i class="fa-solid fa-xmark cancel" onclick="cancel()"></i> 
             </div>
         </div>
     </nav>
 
-    <section class="colab-section">
-        <h1 data-aos="fade-down">Python Program</h1>
-        <p data-aos="fade-up">Gunakan platform eksekusi di bawah ini untuk menguji algoritma dan sistem pengolah data Info PTN bikinan kelompok kami secara interaktif.</p>
-
-        <div class="program-card" data-aos="zoom-in">
-            <i class="fa-brands fa-python python-icon"></i>
-            <h2 style="font-size: 1.4rem; font-weight: 600;">Sistem Pengolah Info PTN</h2>
-            
-            <a class="badge-link" href="https://colab.research.google.com/drive/1V4Nqdle6lMmakuln9r9sdvMNTHyILPyn?usp=sharing" target="_blank">
-                <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" style="height: 32px; display: block;">
-            </a>
-
-            <span style="color: #888; font-size: 0.9rem;">atau buka versi penuh melalui tombol berikut:</span>
-
-            <a href="https://colab.research.google.com/drive/1V4Nqdle6lMmakuln9r9sdvMNTHyILPyn?usp=sharing" target="_blank" class="btn-colab">
-                Buka di Google Colab <i class="fa-solid fa-arrow-up-right-from-square"></i>
-            </a>
-        </div>
-    </section>
-
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script>
-        AOS.init({ offset: 0 });
-    </script>
-    <script src="script.js"></script>
-</body>
-</html>
+    <section class="game-section">
+        <h1 data
