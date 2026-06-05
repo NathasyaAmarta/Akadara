@@ -17,7 +17,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
 
     <style>
-        /* 2. TETAP MEMAKSA FONT PLAYFAIR DISPLAY PILIHAN KELOMPOK LO */
+        /* TETAP MEMAKSA FONT PLAYFAIR DISPLAY PILIHAN KELOMPOK LO */
         nav, .logo, .links a, .dropbtn, .nav-dropdown-content a, .dropdown .links a,
         .content h1, .typewriter, .content p, .btn button {
             font-family: 'Playfair Display', Georgia, serif !important;
@@ -75,6 +75,61 @@
         }
         .nav-dropdown-wrapper:hover .nav-dropdown-content { 
             display: block; 
+        }
+
+        /* =======================================================
+           PENGAMAN SUPER KETAT BIAR GAME BENERAN PINDAH KE TENGAH
+           ======================================================= */
+        .game-section {
+            width: 100% !important;
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: center !important;    /* Paksa semua konten di seksi ini ke tengah poros */
+            justify-content: center !important;
+            text-align: center !important;
+            padding: 60px 20px !important;
+            margin: 0 auto !important;
+        }
+
+        .game-section h1 {
+            margin-bottom: 10px !important;
+            color: #fff !important;
+            width: 100% !important;
+        }
+
+        .game-section p {
+            margin-bottom: 30px !important;
+            color: #ccc !important;
+            width: 100% !important;
+        }
+
+        .scratch-frame-container {
+            width: 60% !important;            /* Ukuran sedang kayak contact.html */
+            max-width: 642px !important;      /* Resolusi pas game scratch */
+            height: 512px !important;
+            margin: 0 auto !important;        /* Margin auto kiri-kanan biar pas center di layar */
+            position: relative !important;
+            box-shadow: 0 0 25px rgba(211, 3, 3, 0.35) !important;
+            border-radius: 12px !important;
+            overflow: hidden !important;
+            border: 1px solid #333 !important;
+            background-color: #111 !important;
+            display: block !important;
+        }
+
+        .scratch-iframe {
+            width: 100% !important;
+            height: 100% !important;
+            border: none !important;
+            display: block !important;
+        }
+
+        /* Penyesuaian Responsif Layar HP */
+        @media screen and (max-width: 768px) {
+            .scratch-frame-container {
+                width: 95% !important;
+                height: 300px !important;
+            }
         }
     </style>
 </head>
