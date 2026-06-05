@@ -122,19 +122,20 @@ function cancelMenu() {
 }
 
 // ==========================================
-// 3. LOGIKA PRODUK CHOOSE YOUR PTN (FIXED)
+// 3. LOGIKA PRODUK CHOOSE YOUR PTN (FIXED TOTAL)
 // ==========================================
 function updateJurusan() {
     const kategoriSelect = document.getElementById('kategori');
     const jurusanSelect = document.getElementById('jurusan');
 
-    if(!kategoriSelect || !jurusanSelect) return;
+    if (!kategoriSelect || !jurusanSelect) return;
 
     const kategoriTerpilih = kategoriSelect.value;
 
     // Reset isi dropdown jurusan tiap kali kategori diganti
     jurusanSelect.innerHTML = '<option value="">-- Pilih Jurusan --</option>';
 
+    // Memastikan pemanggilan databasePTN sesuai dengan nama objek di atas
     if (kategoriTerpilih && databasePTN[kategoriTerpilih]) {
         jurusanSelect.disabled = false; 
 
@@ -158,7 +159,7 @@ function cekPTN() {
     const containerLogo = document.getElementById('container-logo');
     const namaJurusanTerpilih = document.getElementById('nama-jurusan-terpilih');
 
-    if(!kategoriSelect || !jurusanSelect || !hasilDiv || !containerLogo || !namaJurusanTerpilih) return;
+    if (!kategoriSelect || !jurusanSelect || !hasilDiv || !containerLogo || !namaJurusanTerpilih) return;
 
     const kategori = kategoriSelect.value;
     const jurusan = jurusanSelect.value;
@@ -171,9 +172,10 @@ function cekPTN() {
     namaJurusanTerpilih.textContent = jurusan;
     containerLogo.innerHTML = ''; 
 
+    // Memastikan pemanggilan objek databasePTN di sini juga benar menggunakan PTN kapital
     const dataKampus = databasePTN[kategori][jurusan];
 
-    if(dataKampus) {
+    if (dataKampus) {
         dataKampus.forEach((ptn, index) => {
             const item = document.createElement('div');
             item.className = 'item-ptn';
