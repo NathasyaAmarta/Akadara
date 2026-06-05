@@ -109,20 +109,21 @@ const databasePTN = {
 };
 
 // ==========================================
-// 2. NAVIGASI MENU RESPONSIF
+// 2. NAVIGASI MENU RESPONSIF (FIXED FOR FULLSCREEN)
 // ==========================================
 function hamburg() {
     const navbar = document.querySelector(".dropdown");
-    if(navbar) navbar.style.transform = "translateY(0px)";
+    if(navbar) navbar.style.transform = "translateY(0)";
 }
 
 function cancelMenu() {
     const navbar = document.querySelector(".dropdown");
-    if(navbar) navbar.style.transform = "translateY(-500px)";
+    // Diubah ke -100% mengikuti setup CSS terbaru agar menutup sempurna
+    if(navbar) navbar.style.transform = "translateY(-100%)";
 }
 
 // ==========================================
-// 3. LOGIKA PRODUK CHOOSE YOUR PTN (FIXED TOTAL)
+// 3. LOGIKA PRODUK CHOOSE YOUR PTN
 // ==========================================
 function updateJurusan() {
     const kategoriSelect = document.getElementById('kategori');
@@ -132,10 +133,8 @@ function updateJurusan() {
 
     const kategoriTerpilih = kategoriSelect.value;
 
-    // Reset isi dropdown jurusan tiap kali kategori diganti
     jurusanSelect.innerHTML = '<option value="">-- Pilih Jurusan --</option>';
 
-    // Memastikan pemanggilan databasePTN sesuai dengan nama objek di atas
     if (kategoriTerpilih && databasePTN[kategoriTerpilih]) {
         jurusanSelect.disabled = false; 
 
@@ -172,7 +171,6 @@ function cekPTN() {
     namaJurusanTerpilih.textContent = jurusan;
     containerLogo.innerHTML = ''; 
 
-    // Memastikan pemanggilan objek databasePTN di sini juga benar menggunakan PTN kapital
     const dataKampus = databasePTN[kategori][jurusan];
 
     if (dataKampus) {
