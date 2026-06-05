@@ -19,7 +19,7 @@
         /* TAMBAHAN PENGATUR LAPISAN AGAR DROPDOWN BISA DIPENCET */
         nav {
             position: relative !important;
-            z-index: 9999999 !important; /* Menaikkan lapisan navbar ke paling depan */
+            z-index: 9999999 !important;
         }
 
         /* FONT PLAYFAIR DISPLAY */
@@ -36,14 +36,13 @@
             font-family: 'Playfair Display', Georgia, serif !important;
         }
 
-        /* Memaksa semua menu rata tengah horizontal secara vertikal */
         .links {
             display: flex !important;
             align-items: center !important; 
             gap: 25px; 
         }
 
-        /* STRUKTUR DROPDOWN UTAMA (ANTI-BUG SAMA DENGAN ABOUT US) */
+        /* STRUKTUR DROPDOWN UTAMA */
         .nav-dropdown-wrapper { 
             position: relative; 
             display: inline-block; 
@@ -67,7 +66,6 @@
             transform: rotate(180deg); 
         }
         
-        /* Kotak Dropdown Utama - Menempel Rapat 0px Tanpa Celah */
         .nav-dropdown-content {
             display: none !important; 
             position: absolute; 
@@ -78,7 +76,7 @@
             left: 50%;
             transform: translateX(-50%); 
             margin-top: 0px !important; 
-            z-index: 99999999 !important; /* Berada di atas lapisan nav */
+            z-index: 99999999 !important;
             border-radius: 6px; 
             border: 1px solid rgba(211, 3, 3, 0.4);
             box-shadow: 0px 8px 24px rgba(211, 3, 3, 0.4); 
@@ -86,7 +84,6 @@
             padding: 6px 0 !important;
         }
 
-        /* Link di dalam Dropdown (Skill & Info PTN) */
         .nav-dropdown-content a {
             color: white !important; 
             padding: 12px 20px !important; 
@@ -97,7 +94,7 @@
             font-size: 0.95rem !important;
             border-bottom: none !important; 
             font-weight: normal !important;
-            pointer-events: auto !important; /* Memaksa browser mengizinkan klik */
+            pointer-events: auto !important;
             transition: background 0.2s ease !important;
         }
         
@@ -106,12 +103,11 @@
             color: white !important; 
         }
         
-        /* Trigger Hover */
         .nav-dropdown-wrapper:hover .nav-dropdown-content { 
             display: block !important; 
         }
 
-        /* TRICK LOGO KELOMPOK DI TENGAH LINGKARAN BESAR AKADARA */
+        /* MODIFIKASI: MAKSA LOGO FULL SATU LINGKARAN MERAH UTUH */
         .image {
             position: relative !important;
             display: flex !important;
@@ -125,26 +121,26 @@
             display: block !important;
         }
 
-        /* Wadah Penempatan Logo Kelompok */
+        /* Wadah Penempatan Logo dibuat 100% biar pas seukuran lingkaran merah bg.jpg */
         .logo-center-overlay {
             position: absolute !important;
-            top: 52% !important;    /* Geser pas ke tengah vertikal bulatan hitam */
-            left: 51% !important;   /* Geser pas ke tengah horizontal bulatan hitam */
+            top: 50% !important;
+            left: 50% !important;
             transform: translate(-50%, -50%) !important;
-            width: 35% !important;  /* Ukuran logo di dalam bulatan hitam */
-            height: 35% !important;  
+            width: 100% !important;  /* DIUBAH JADI 100% BIAR MENUHIN LINGKARAN */
+            height: 100% !important; /* DIUBAH JADI 100% BIAR MENUHIN LINGKARAN */
             display: flex !important;
             justify-content: center !important;
             align-items: center !important;
-            z-index: 99999 !important; /* Menembus lapisan atas agar tidak ngumpet */
+            z-index: 99999 !important;
             pointer-events: none !important;
         }
 
         .logo-center-overlay img {
             width: 100% !important;
             height: 100% !important;
-            object-fit: contain !important; /* Menjaga aspek rasio logo kelompok biar ga gepeng */
-            border-radius: 0% !important;
+            object-fit: fill; /* Dipaksa melar penuh menutup seluruh background lingkaran */
+            border-radius: 50% !important; /* WAJIB: memotong ujung logo biar ikutan bulat sempurna semangkok merah */
         }
     </style>
 </head>
