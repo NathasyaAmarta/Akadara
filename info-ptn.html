@@ -92,27 +92,24 @@
         }
 
         /* =======================================================
-           EFEK & WARNA CLONE 100% SAMA SEPERTI SKILL.HTML
+           CLONE KODE .container-product h2 MILIK KELOMPOK LO 100%
            ======================================================= */
         .game-section h1 {
-            font-size: 2.2rem !important;      /* Menyelaraskan ukuran font h2 skill.html */
-            font-weight: 700 !important;       /* Tingkat ketebalan font huruf */
-            color: #ffffff !important;         /* Putih solid sesuai dengan screenshot lo */
-            text-transform: uppercase !important; /* Memaksa teks jadi KAPITAL SEMUA */
-            letter-spacing: 1px !important;    /* Spasi estetik antar huruf */
-            text-shadow: none !important;      /* Mematikan total glow neon merah kemarin */
-            margin-bottom: 8px !important;
-            display: inline-block !important;
+            text-align: center !important;  
+            color: #cc0000 !important;              /* Merah khas Akadara */
+            font-size: 1.8rem !important;            /* Ukuran pas proporsional */
+            filter: drop-shadow(0px 2px 8px rgba(243, 74, 74, 0.6)) !important; /* Efek shadow estetik */
+            margin-bottom: 5px !important;  
+            text-transform: uppercase !important;   /* Kapital semua otomatis */
+            letter-spacing: 1px !important;        /* Jarak antar huruf */
+            width: 100% !important;
+            font-weight: bold !important;
         }
 
-        /* Sub-text deskripsi game disamakan dengan .product-desc di skill.html */
         .game-section p {
-            font-size: 1rem !important;
-            color: #cccccc !important;         /* Warna abu-abu soft khas deskripsi produk */
-            margin-bottom: 35px !important;
+            margin-bottom: 30px !important;
+            color: #ccc !important;
             width: 100% !important;
-            font-weight: normal !important;
-            text-shadow: none !important;
         }
 
         .scratch-frame-container {
@@ -136,14 +133,14 @@
             display: block !important;
         }
 
-        /* Penyesuaian Kerapihan di Layar Smartphone (Mobile) */
+        /* Penyesuaian Responsif Layar HP */
         @media screen and (max-width: 768px) {
             .scratch-frame-container {
                 width: 95% !important;
                 height: 300px !important;
             }
             .game-section h1 {
-                font-size: 1.8rem !important;
+                font-size: 1.5rem !important; /* Di HP dikecilkan sedikit biar pas */
             }
         }
     </style> 
