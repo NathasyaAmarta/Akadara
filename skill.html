@@ -12,6 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
 
     <style>
+        /* SINKRONISASI DROPDOWN NAVBAR BIAR STABIL */
         /* SINKRONISASI DROPDOWN NAVBAR BIAR STABIL & PAKAI FONT PLAYFAIR DISPLAY */
         nav {
             position: relative !important;
@@ -117,7 +118,7 @@
                 <a href="index.html">Home</a>
                 <a href="about.html">About Us</a>
                 <a href="contact.html">Design Product</a>
-                
+
                 <div class="nav-dropdown-wrapper">
                     <a class="dropbtn" style="color: rgb(211, 3, 3); border-bottom: 2px solid rgb(211, 3, 3); font-weight: bold;">Product <i class="fa-solid fa-caret-down"></i></a>
                     <div class="nav-dropdown-content">
@@ -128,7 +129,7 @@
             </div>
         </div>
         <i class="fa-solid fa-bars hamburg" onclick="hamburg()"></i>
-        
+
         <div class="dropdown">
             <div class="links">
                 <a href="index.html">Home</a>
@@ -145,19 +146,22 @@
         <div class="container-product">
             <h2>AKADARA - CHOOSE YOUR PTN</h2>
             <p class="product-desc">Cari tahu 3 Perguruan Tinggi Negeri terbaik berdasarkan kategori dan jurusan impianmu.</p>
-            
+
             <form id="form-cari">
                 <div class="form-group">
                     <label for="kategori">Pilih Kategori Jurusan:</label>
                     <select id="kategori" onchange="updateJurusan()">
-    <option value="">-- Pilih Kategori --</option>
-    <option value="IPA">Saintek</option>
-    <option value="IPS">Soshum</option>
-</select>
+                        <option value="">-- Pilih Kategori --</option>
+                        <option value="IPA">Saintek</option>
+                        <option value="IPS">Soshum</option>
+                    </select>
+                </div>
 
-<select id="jurusan" disabled>
-    <option value="">-- Pilih Kategori Dulu --</option>
-</select>
+                <div class="form-group">
+                    <label for="jurusan">Pilih Jurusan Spesifik:</label>
+                    <select id="jurusan" disabled>
+                        <option value="">-- Pilih Kategori Dulu --</option>
+                    </select>
                 </div>
 
                 <button type="button" class="btn-search" onclick="cekPTN()">Cari Top 3 PTN</button>
@@ -172,3 +176,10 @@
                 <a class="badge-link" href="https://colab.research.google.com/drive/1V4Nqdle6lMmakuln9r9sdvMNTHyILPyn?usp=sharing" target="_blank">
                     <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" style="height: 38px; display: block;">
                 </a>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script> 
+</body>
+</html>
