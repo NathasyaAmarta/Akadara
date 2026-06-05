@@ -17,7 +17,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
 
     <style>
-        /* 2. TETAP MEMAKSA FONT PLAYFAIR DISPLAY PILIHAN KELOMPOK LO */
+        /* TETAP MEMAKSA FONT PLAYFAIR DISPLAY PILIHAN KELOMPOK LO */
         nav, .logo, .links a, .dropbtn, .nav-dropdown-content a, .dropdown .links a,
         .content h1, .typewriter, .content p, .btn button {
             font-family: 'Playfair Display', Georgia, serif !important;
@@ -76,6 +76,31 @@
         .nav-dropdown-wrapper:hover .nav-dropdown-content { 
             display: block; 
         }
+
+        /* =======================================================
+           CSS KHUSUS UNTUK MEMBUAT TOMBOL COLAB PAS DI TENGAH LAYAR
+           ======================================================= */
+        .colab-center-wrapper {
+            display: flex !important;
+            justify-content: center !important;
+            align-items: center !important;
+            width: 100% !important;
+            margin-top: 35px !important; /* Jarak pas di bawah kotak hitam search-box */
+            margin-bottom: 50px !important;
+        }
+
+        .colab-center-wrapper a {
+            display: inline-block !important;
+            box-shadow: 0 0 15px rgba(211, 3, 3, 0.4);
+            border-radius: 6px;
+            overflow: hidden;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .colab-center-wrapper a:hover {
+            box-shadow: 0 0 25px rgba(211, 3, 3, 0.7);
+            transform: scale(1.05); /* Efek membesar dikit pas di-hover */
+        }
     </style>
 </head>
 <body> 
@@ -112,45 +137,41 @@
             </div>
         </div>
     </nav>
-    
-    <section class="product-section-only">
-        <div class="container-product">
-            <h2>AKADARA - CHOOSE YOUR PTN</h2>
-            <p class="product-desc">Cari tahu 3 Perguruan Tinggi Negeri terbaik berdasarkan kategori dan jurusan impianmu.</p>
 
-            <form id="form-cari">
-                <div class="form-group">
-                    <label for="kategori">Pilih Kategori Jurusan:</label>
-                    <select id="kategori" onchange="updateJurusan()">
-                        <option value="">-- Pilih Kategori --</option>
-                        <option value="IPA">Saintek</option>
-                        <option value="IPS">Soshum</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label for="jurusan">Pilih Jurusan Spesifik:</label>
-                    <select id="jurusan" disabled>
-                        <option value="">-- Pilih Kategori Dulu --</option>
-                    </select>
-                </div>
-
-                <button type="button" class="btn-search" onclick="cekPTN()">Cari Top 3 PTN</button>
-            </form>
-
-            <div id="hasil" style="display: none; margin-top: 25px;">
-                <h3 style="color: #fff; margin-bottom: 15px;">Top 3 PTN Untuk Jurusan: <span id="nama-jurusan-terpilih" style="color: #d30303;"></span></h3>
-                <div id="container-logo" class="container-logo-ptn"></div>
-            </div>
-
-            <div class="colab-integration-box">
-                <a class="badge-link" href="https://colab.research.google.com/drive/1V4Nqdle6lMmakuln9r9sdvMNTHyILPyn?usp=sharing" target="_blank">
-                    <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" style="height: 38px; display: block;">
-                </a>
-            </div>
+    <div class="search-box" data-aos="fade-up">
+        <div class="form-group">
+            <select id="kategori" onchange="updateJurusan()">
+                <option value="">Saintek</option>
+                <option value="IPA">Saintek</option>
+                <option value="IPS">Soshum</option>
+            </select>
         </div>
-    </section>
+        
+        <div class="form-group">
+            <label for="jurusan">Pilih Jurusan Spesifik:</label>
+            <select id="jurusan" disabled="">
+                <option value="">-- Pilih Kategori Dulu --</option>
+            </select>
+        </div>
+        
+        <button class="search-btn" onclick="cekPTN()">Cari Top 3 PTN</button>
+        
+        <div id="hasil" class="result-container" style="display: none;">
+            <h3 class="result-title">Top 3 PTN Untuk Jurusan: <span id="nama-jurusan-terpilih">Ilmu Gizi</span></h3>
+            <div id="container-logo" class="logo-grid"></div>
+        </div>
+    </div>
 
-    <script src="script.js"></script> 
+    <div class="colab-center-wrapper">
+        <a href="https://colab.research.google.com/drive/1A_wTzO2V0Gis939YV4K6IexIis45iQdI" target="_blank" rel="noopener">
+            <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab">
+        </a>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({ offset: 0, duration: 800 });
+    </script>
 </body>
 </html>
