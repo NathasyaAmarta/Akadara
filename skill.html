@@ -8,17 +8,27 @@
     <link rel="stylesheet" href="styles.css">
 
     <style>
+        /* SINKRONISASI DROPDOWN NAVBAR BIAR STABIL */
+        nav {
+            position: relative !important;
+            z-index: 9999999 !important;
+        }
+        .links {
+            display: flex !important;
+            align-items: center !important; 
+            gap: 25px; 
+        }
         .nav-dropdown-wrapper { 
             position: relative; 
             display: inline-block; 
         }
         .nav-dropdown-wrapper .dropbtn { 
             cursor: pointer; 
-            color: white; 
-            text-decoration: none; 
-            font-size: 1.1rem; 
-            font-weight: 500; 
-            transition: 0.3s; 
+            display: inline-flex;
+            align-items: center;
+            padding: 15px 0 !important; 
+            color: white;
+            text-decoration: none;
         }
         .nav-dropdown-wrapper .dropbtn i { 
             margin-left: 5px; 
@@ -29,41 +39,61 @@
             transform: rotate(180deg); 
         }
         .nav-dropdown-content {
-            display: none; 
+            display: none !important; 
             position: absolute; 
-            background-color: rgba(18, 18, 18, 0.95);
+            background-color: rgba(18, 18, 18, 0.98) !important;
             backdrop-filter: blur(10px); 
-            min-width: 190px; 
-            top: 100%; 
+            min-width: 200px; 
+            top: 100% !important; 
             left: 50%;
             transform: translateX(-50%); 
-            margin-top: 10px; 
-            z-index: 2000;
+            z-index: 99999999 !important;
             border-radius: 6px; 
             border: 1px solid rgba(211, 3, 3, 0.4);
-            box-shadow: 0px 8px 24px rgba(211, 3, 3, 0.3); 
+            box-shadow: 0px 8px 24px rgba(211, 3, 3, 0.4); 
             overflow: hidden;
+            padding: 6px 0 !important;
         }
         .nav-dropdown-content a {
             color: white !important; 
-            padding: 12px 18px !important; 
+            padding: 12px 20px !important; 
             text-decoration: none !important;
             display: flex !important; 
-            align-items: center; 
-            gap: 10px; 
+            align-items: center !important; 
+            gap: 10px !important; 
             font-size: 0.95rem !important;
             border-bottom: none !important; 
-            transition: background 0.3s, color 0.3s !important;
+            transition: background 0.2s ease !important;
         }
         .nav-dropdown-content a:hover { 
             background-color: rgb(171, 0, 0) !important; 
             color: white !important; 
         }
         .nav-dropdown-wrapper:hover .nav-dropdown-content { 
-            display: block; 
+            display: block !important; 
         }
-        .nav-dropdown-content a:hover { 
-            border-bottom: none !important; 
+
+        /* INTEGRASI TOMBOL COLAB */
+        .colab-integration-box {
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+        .colab-integration-box p {
+            font-size: 0.95rem;
+            color: #aaaaaa;
+            margin: 0;
+        }
+        .badge-link {
+            display: inline-block;
+            transition: transform 0.2s ease;
+        }
+        .badge-link:hover {
+            transform: scale(1.08);
         }
     </style>
 </head>
@@ -78,10 +108,10 @@
                 <a href="contact.html">Design Product</a>
                 
                 <div class="nav-dropdown-wrapper">
-                    <a href="#" class="dropbtn">Product <i class="fa-solid fa-caret-down"></i></a>
+                    <a class="dropbtn" style="color: rgb(211, 3, 3); border-bottom: 2px solid rgb(211, 3, 3); font-weight: bold;">Product <i class="fa-solid fa-caret-down"></i></a>
                     <div class="nav-dropdown-content">
-                        <a href="skill.html"><i class="fa-solid fa-briefcase"></i> Skill Product</a>
-                        <a href="info-ptn.html"><i class="fa-solid fa-graduation-cap"></i> Info PTN Python</a>
+                        <a href="skill.html" style="color: rgb(211, 3, 3) !important;"><i class="fa-solid fa-briefcase"></i> Skill Product</a>
+                        <a href="info-ptn.html"><i class="fa-solid fa-gamepad"></i> Scratch Game</a>
                     </div>
                 </div>
             </div>
@@ -93,8 +123,8 @@
                 <a href="index.html">Home</a>
                 <a href="about.html">About Us</a>
                 <a href="contact.html">Design Product</a> 
-                <a href="skill.html">Product (Skill)</a>
-                <a href="info-ptn.html">Product (Info PTN)</a>
+                <a href="skill.html" style="color: rgb(211, 3, 3);">Product (Skill)</a>
+                <a href="info-ptn.html">Product (Scratch Game)</a>
                 <i class="fa-solid fa-xmark cancel" onclick="cancelMenu()"></i> 
             </div>
         </div>
@@ -128,6 +158,13 @@
             <div id="hasil" style="display: none; margin-top: 25px;">
                 <h3 style="color: #fff; margin-bottom: 15px;">Top 3 PTN Untuk Jurusan: <span id="nama-jurusan-terpilih" style="color: #d30303;"></span></h3>
                 <div id="container-logo" class="container-logo-ptn"></div>
+            </div>
+
+            <div class="colab-integration-box">
+                <p>Ingin melihat atau menjalankan source code program Python kami?</p>
+                <a class="badge-link" href="https://colab.research.google.com/drive/1V4Nqdle6lMmakuln9r9sdvMNTHyILPyn?usp=sharing" target="_blank">
+                    <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" style="height: 38px; display: block;">
+                </a>
             </div>
         </div>
     </section>
