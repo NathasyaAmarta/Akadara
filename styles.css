@@ -73,7 +73,7 @@ nav {
   border-bottom: 2px solid rgb(211, 3, 3);
 }
 
-/* Tombol Menu Tiga Garis (Sembunyi di Laptop) */
+/* Tombol Menu Tiga Garis (Sembunyi Default di Laptop) */
 .hamburg {
   display: none;
   color: white;
@@ -82,7 +82,7 @@ nav {
   z-index: 1001;
 }
 
-/* Dropdown Menu untuk Layar HP */
+/* Dropdown Menu Fullscreen untuk HP */
 .dropdown {
   position: fixed;
   top: 0;
@@ -94,7 +94,7 @@ nav {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  transform: translateY(-100%);
+  transform: translateY(-100%); /* Sembunyi di atas layar */
   transition: transform 0.4s ease;
   z-index: 999998;
 }
@@ -114,6 +114,7 @@ nav {
   text-decoration: none;
 }
 
+/* Tombol Silang di Menu HP */
 .dropdown .cancel {
   position: absolute;
   top: 20px;
@@ -247,6 +248,12 @@ section {
   margin-bottom: 25px !important;
 }
 
+.product-desc p, 
+.product-desc span,
+.container-product p {
+  color: #bbbbbb !important;
+}
+
 .form-group {
   margin-bottom: 15px;
 }
@@ -372,10 +379,12 @@ section {
    6. RESPONSIVE MEDIA QUERY (HP FIX)
    ========================================== */
 @media screen and (max-width: 768px) {
+  /* Sembunyikan menu teks laptop di HP agar tidak numpuk */
   .desktop-menu {
     display: none !important;
   }
 
+  /* Paksa munculkan tombol 3 garis di HP */
   .hamburg {
     display: block !important;
   }
