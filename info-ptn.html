@@ -16,7 +16,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
 
-    <style>
+   <style>
         /* TETAP MEMAKSA FONT PLAYFAIR DISPLAY PILIHAN KELOMPOK LO */
         nav, .logo, .links a, .dropbtn, .nav-dropdown-content a, .dropdown .links a,
         .content h1, .typewriter, .content p, .btn button {
@@ -92,27 +92,27 @@
         }
 
         /* =======================================================
-           MODIFIKASI JUDUL JADI MERAH NYALA & GLOWING EFFECT
+           EFEK & WARNA CLONE 100% SAMA SEPERTI SKILL.HTML
            ======================================================= */
         .game-section h1 {
-            margin-bottom: 15px !important;
-            width: 100% !important;
-            font-size: 2.8rem !important; /* Ukuran teks judul dipertegas */
-            font-weight: 800 !important;
-            color: #ff2222 !important; /* Warna merah dasar super terang */
-            
-            /* Efek Neon Glow Berlapis (Makin besar px, makin pudar pendaran cahayanya) */
-            text-shadow: 0 0 8px rgba(211, 3, 3, 0.8), 
-                         0 0 20px rgba(211, 3, 3, 0.5), 
-                         0 0 40px rgba(211, 3, 3, 0.3) !important;
-            
-            letter-spacing: 1px; /* Jarak antar huruf biar estetik */
+            font-size: 2.2rem !important;      /* Menyelaraskan ukuran font h2 skill.html */
+            font-weight: 700 !important;       /* Tingkat ketebalan font huruf */
+            color: #ffffff !important;         /* Putih solid sesuai dengan screenshot lo */
+            text-transform: uppercase !important; /* Memaksa teks jadi KAPITAL SEMUA */
+            letter-spacing: 1px !important;    /* Spasi estetik antar huruf */
+            text-shadow: none !important;      /* Mematikan total glow neon merah kemarin */
+            margin-bottom: 8px !important;
+            display: inline-block !important;
         }
 
+        /* Sub-text deskripsi game disamakan dengan .product-desc di skill.html */
         .game-section p {
-            margin-bottom: 30px !important;
-            color: #ccc !important;
+            font-size: 1rem !important;
+            color: #cccccc !important;         /* Warna abu-abu soft khas deskripsi produk */
+            margin-bottom: 35px !important;
             width: 100% !important;
+            font-weight: normal !important;
+            text-shadow: none !important;
         }
 
         .scratch-frame-container {
@@ -136,19 +136,17 @@
             display: block !important;
         }
 
-        /* Penyesuaian Responsif Layar HP */
+        /* Penyesuaian Kerapihan di Layar Smartphone (Mobile) */
         @media screen and (max-width: 768px) {
             .scratch-frame-container {
                 width: 95% !important;
                 height: 300px !important;
             }
             .game-section h1 {
-                font-size: 2rem !important; /* Ukuran dikecilkan sedikit di mobile biar gak patah baris */
+                font-size: 1.8rem !important;
             }
         }
-    </style>
-</head>
-<body> 
+    </style> 
 
     <nav>
         <div class="nav-container">
