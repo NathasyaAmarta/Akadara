@@ -22,7 +22,7 @@
             z-index: 9999999 !important;
         }
 
-        nav, .logo, .links a, .dropbtn, .nav-dropdown-content a, .dropdown .links a,
+        /* Hanya teks konten utama yang pakai Playfair, font navbar dibebaskan mengikuti styles.css */
         .game-section h1, .game-section p {
             font-family: 'Playfair Display', Georgia, serif !important;
         }
@@ -127,7 +127,7 @@
         /* Bingkai Premium Game Scratch */
         .scratch-frame-container {
             width: 100%;
-            max-width: 680px; /* Lebar optimal rasio layar Scratch */
+            max-width: 680px; 
             background: rgba(26, 26, 26, 0.65);
             backdrop-filter: blur(15px);
             -webkit-backdrop-filter: blur(15px);
@@ -142,7 +142,7 @@
 
         .scratch-iframe {
             width: 100%;
-            height: 480px; /* Tinggi standar layar game scratch agar pas */
+            height: 480px; 
             border: none;
             border-radius: 8px;
             background: #000;
@@ -184,4 +184,18 @@
     </nav>
 
     <section class="game-section">
-        <h1 data
+        <h1 data-aos="fade-down">Maze Runner PTN</h1>
+        <p data-aos="fade-up">Mainkan game interaktif persembahan kelompok Akadara langsung melalui browser kamu di bawah ini.</p>
+
+        <div class="scratch-frame-container" data-aos="zoom-in">
+            <iframe src="Maze%20Runner%20PTN/scratch.html" class="scratch-iframe" allowtransparency="true" allowfullscreen="true"></iframe>
+        </div>
+    </section>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({ offset: 0 });
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
