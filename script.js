@@ -1,5 +1,5 @@
 // ==========================================
-// 1. DATA JURUSAN & TOP 3 PTN 
+// 1. DATA JURUSAN & TOP 3 PTN (TIDAK DIUBAH)
 // ==========================================
 const databasePTN = {
     IPA: {
@@ -116,25 +116,23 @@ function hamburg() {
     if(navbar) navbar.style.transform = "translateY(0px)";
 }
 
-// Fungsi ganti nama ke cancelMenu biar ga tabrakan ama fungsi bawaan js
 function cancelMenu() {
     const navbar = document.querySelector(".dropdown");
     if(navbar) navbar.style.transform = "translateY(-500px)";
 }
 
 // ==========================================
-// 3. LOGIKA PRODUK CHOOSE YOUR PTN
+// 3. LOGIKA PRODUK CHOOSE YOUR PTN (FIXED)
 // ==========================================
-
 function updateJurusan() {
     const kategoriSelect = document.getElementById('kategori');
     const jurusanSelect = document.getElementById('jurusan');
 
-    // Validasi pencegah error biar drop-down ga macet
     if(!kategoriSelect || !jurusanSelect) return;
 
     const kategoriTerpilih = kategoriSelect.value;
 
+    // Reset isi dropdown jurusan tiap kali kategori diganti
     jurusanSelect.innerHTML = '<option value="">-- Pilih Jurusan --</option>';
 
     if (kategoriTerpilih && databasePTN[kategoriTerpilih]) {
@@ -191,11 +189,3 @@ function cekPTN() {
 
     hasilDiv.style.display = 'block';
 }
-
-// Memastikan event listener nempel pas dokumen selesai di-load browser
-document.addEventListener("DOMContentLoaded", () => {
-    const kategoriSelect = document.getElementById('kategori');
-    if(kategoriSelect) {
-        kategoriSelect.addEventListener('change', updateJurusan);
-    }
-});
