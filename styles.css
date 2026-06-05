@@ -188,15 +188,15 @@ section {
 .image {
   width: 420px;
   height: 420px;
-  border-radius: 50%;
+  /* border-radius: 50%; */      /* <--- HAPUS / KOMENTARI BARIS INI BIAR GAK JADI BULATAN */
   overflow: hidden;
-  box-shadow: 0 0 30px rgb(211, 3, 3);
+  /* box-shadow: 0 0 30px rgb(211, 3, 3); */ /* <--- HAPUS / KOMENTARI BARIS INI BIAR GLOW MERAHNYA HILANG */
 }
 
 .image img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain; /* <--- UBAH dari 'cover' ke 'contain' biar logonya gak kepotong */
   animation: floatLogo 3s ease-in-out infinite;
 }
 
