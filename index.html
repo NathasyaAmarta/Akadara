@@ -111,7 +111,7 @@
             display: block !important; 
         }
 
-        /* TRICK LOGO FULL DI DALAM LINGKARAN BESAR ASLI AKADARA */
+        /* TRICK LOGO KELOMPOK DI TENGAH LINGKARAN BESAR AKADARA */
         .image {
             position: relative !important;
             display: flex !important;
@@ -119,31 +119,31 @@
             align-items: center !important;
         }
 
-        /* Kita manipulasi gambar bg.jpg bawaan lo (yang bunderan merah gede itu) */
         .image img[src="bg.jpg"] {
             width: 100% !important;
             height: auto !important;
-            display: block;
+            display: block !important;
         }
 
-        /* Wadah logo pelapis tepat di tengah-tengah bulatan merah */
+        /* Wadah Penempatan Logo Kelompok */
         .logo-center-overlay {
             position: absolute !important;
-            /* Koordinat center tepat di tengah-tengah bunderan merah lo */
-            width: 45% !important;  
-            height: 45% !important; 
+            top: 52% !important;    /* Geser pas ke tengah vertikal bulatan hitam */
+            left: 51% !important;   /* Geser pas ke tengah horizontal bulatan hitam */
+            transform: translate(-50%, -50%) !important;
+            width: 35% !important;  /* Ukuran logo di dalam bulatan hitam */
+            height: 35% !important;  
             display: flex !important;
             justify-content: center !important;
             align-items: center !important;
-            z-index: 5;
-            overflow: hidden;
+            z-index: 99999 !important; /* Menembus lapisan atas agar tidak ngumpet */
+            pointer-events: none !important;
         }
 
-        /* Aturan seting logo kampus biar melar full rapi */
         .logo-center-overlay img {
             width: 100% !important;
             height: 100% !important;
-            object-fit: contain; /* Pake 'contain' biar lambang aslinya kagak gepeng/rusak */
+            object-fit: contain !important; /* Menjaga aspek rasio logo kelompok biar ga gepeng */
             border-radius: 0% !important;
         }
     </style>
@@ -200,13 +200,11 @@
                 </div>
             </div>
             
-           <div class="image" data-aos="zoom-in">
+            <div class="image" data-aos="zoom-in">
                 <img src="bg.jpg" alt="Akadara">
                 
                 <div class="logo-center-overlay">
-                    <img src="logo akadara.png.jpeg" alt="Logo Akadara">
-                </div>
-            </div>
+                    <img src="logo-akadara.jpeg" alt="Logo Akadara">
                 </div>
             </div>
         </div>
