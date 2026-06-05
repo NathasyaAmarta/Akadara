@@ -17,7 +17,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
 
     <style>
-        /* 2. TETAP MEMAKSA FONT PLAYFAIR DISPLAY PILIHAN KELOMPOK LO */
+        /* TETAP MEMAKSA FONT PLAYFAIR DISPLAY PILIHAN KELOMPOK LO */
         nav, .logo, .links a, .dropbtn, .nav-dropdown-content a, .dropdown .links a,
         .content h1, .typewriter, .content p, .btn button {
             font-family: 'Playfair Display', Georgia, serif !important;
@@ -75,6 +75,42 @@
         }
         .nav-dropdown-wrapper:hover .nav-dropdown-content { 
             display: block; 
+        }
+
+        /* =======================================================
+           PENGATUR UKURAN CANVA (PPT) SEDANG & AUTO RATA TENGAH
+           ======================================================= */
+        .iframe-section {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 20px 40px 20px; /* Memberi ruang space atas dan bawah */
+        }
+
+        .iframe-container {
+            width: 60%;            /* Ukuran sedang pas di mata (sama dengan contact) */
+            max-width: 800px;      /* Batas maksimal lebar monitor laptop */
+            height: 450px;         /* Tinggi proporsional rasio presentasi 16:9 */
+            position: relative;
+            box-shadow: 0 0 25px rgba(211, 3, 3, 0.3); /* Efek glow merah mewah */
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid #333;
+        }
+
+        .iframe-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Aturan Responsif Khusus Layar HP */
+        @media screen and (max-width: 768px) {
+            .iframe-container {
+                width: 90%;        /* Melebar otomatis di smartphone */
+                height: 260px;     /* Tinggi proporsional untuk layar HP */
+            }
         }
     </style>
 </head>
